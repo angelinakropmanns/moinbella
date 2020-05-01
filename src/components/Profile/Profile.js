@@ -23,20 +23,38 @@ export default function Profile({
     gender,
     breed,
     about, 
-    search
+    search,
+    onClick,
+    isHidden
 }) {
     return (
         <>
-        <ProfileStyled>
+        <ProfileStyled onClick={onClick}>
             <img src={defaultprofilepicture} alt="sitting bulldog puppy"/>
-            <span className="profile-main"><p className="profile-title">{name}</p>
-            {mail}<br /> 
-            {plz} {city}<br />
-            Mein Hund ist: {gender}<br />
-            Rasse: {breed}<br />
-            </span>
-            <p className="about">Über uns: <br />{about}</p>
-            <p className="search">Wonach wir suchen: <br />{search}</p>
+            <ProfileMainStyled>
+                <ProfileTitleStyled>
+                    {name}
+                </ProfileTitleStyled>
+                    {mail}<br /> 
+                    {plz} {city}<br />
+                    Mein Hund ist: {gender}<br />
+                    Rasse: {breed}<br />
+            </ProfileMainStyled>
+            {isHidden || 
+                <ArrowStyled>
+                    &darr;
+                </ArrowStyled>
+            }
+            {isHidden && (
+                <>
+                    <p className="about">Über uns: <br />{about}</p>
+                    <p className="search">Wonach wir suchen: <br />{search}</p>
+                    <ArrowStyled>
+                        &uarr;
+                    </ArrowStyled>
+                </>
+                )
+        }
         </ProfileStyled>
         </>
     )
@@ -51,7 +69,7 @@ line-height: 1.5;
 margin: 12px 4px 32px 4px;
 padding: 8px;
 border-radius: 8px;
-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 p {
     margin-top: 0px;
     margin-bottom: 4px;
@@ -59,16 +77,6 @@ p {
 img {
     width: 100%;
     height: auto;
-}
-.profile-main {
-    margin-bottom: 20px;
-    margin-left: 10px;
-    line-height: 1.5;
-    font-size: 16px;
-}
-.profile-title {
-    font-weight: bold;
-    font-size: 20px;
 }
 .about {
     grid-column: 1/3;
@@ -78,4 +86,21 @@ img {
 .search {
     grid-column: 1/3;
 }
+`
+
+const ProfileTitleStyled = styled.p`
+    font-weight: bold;
+    font-size: 20px;
+`
+
+const ProfileMainStyled = styled.span`
+    margin-bottom: 20px;
+    margin-left: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+`
+
+const ArrowStyled = styled.span`
+    grid-column: 2/3;
+    text-align: right;
 `
