@@ -36,7 +36,7 @@ export default function Profile({
             Rasse: {breed}<br />
             </span>
             <p className="about">Über uns: <br />{about}</p>
-            <p className="search">Nach was wir suchen: <br />{search}</p>
+            <p className="search">Wonach wir suchen: <br />{search}</p>
         </ProfileStyled>
         </>
     )
@@ -48,13 +48,13 @@ grid-template-columns: 30% 70%;
 background: #c1e1e6;
 text-align: left;
 line-height: 1.5;
-margin: 10px 5px 30px 5px;
-padding: 10px;
+margin: 12px 4px 32px 4px;
+padding: 8px;
 border-radius: 8px;
 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 p {
     margin-top: 0px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 img {
     width: 100%;
@@ -72,7 +72,8 @@ img {
 }
 .about {
     grid-column: 1/3;
-    margin-bottom: 25px;
+    margin-top: 12px;
+    margin-bottom: 32px;
 }
 .search {
     grid-column: 1/3;

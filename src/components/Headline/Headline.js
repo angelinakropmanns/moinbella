@@ -15,8 +15,6 @@ export default function Headline({children}) {
 
 const HeadlineStyled = styled.span`
     font-size: 21px;
-    text-align: center;
     margin-top: 20px;
-    margin-left: 5px;
     margin-bottom: 0;
 `
