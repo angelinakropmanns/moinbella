@@ -1,23 +1,30 @@
 import React from 'react';
-import styled from 'styled-components/macro';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import styled from 'styled-components/macro'
+import Header from './components/Header/Header'
+import ProfilePage from './pages/ProfilePage'
 
 function App() {
   return (
-    <div className="App">
-      <Wrapper>
-      <h1>Moin Bella!</h1>
-      </Wrapper>
-    </div>
+      <Router>
+      <BodyStyled>
+      <Header />
+      <Switch>
+        <Route exact path="/profiles">
+          <ProfilePage />
+        </Route>s
+      </Switch>
+      </BodyStyled>
+      </Router>
   );
 }
 
-const Wrapper = styled.section`
-  font: Malayalam Sangam MN;
-  font-size: 21;
-  color: #414756; 
-  background-color: #AED6DC;
-`
-
-
 export default App;
+
+const BodyStyled = styled.div`
+  display: grid;
+  grid-template-rows: 48px auto;
+  height: 100vh;
+  text-align: center;
+`
