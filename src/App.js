@@ -1,7 +1,7 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import styled from 'styled-components/macro'
-import GlobalStyles from './GlobalStyles'
 import Header from './components/Header/Header'
 import ProfilePage from './pages/ProfilePage'
 
@@ -9,9 +9,12 @@ function App() {
   return (
     <div className="App">
       <BodyStyled>
-      <GlobalStyles />
       <Header />
-      <ProfilePage />
+      <Switch>
+        <Route exact path="/profiles">
+          <ProfilePage />
+        </Route>
+      </Switch>
       </BodyStyled>
     </div>
   );

@@ -3,10 +3,10 @@
       "id": "1",
       "name": "Angelina",
       "mail": "angelina.kropmanns@gmail.com",
-      "plz": "20535",
+      "plz": 20535,
       "city": "Hamburg",
       "gender": "Männlich",
-      "rasse": "Shiba Inu",
+      "breed": "Bulldogge",
       "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
       "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu"
     },
@@ -14,11 +14,11 @@
         "id": "2",
         "name": "Tobi",
         "mail": "tobias.kropmanns@gmail.com",
-        "plz": "20535",
+        "plz": 20535,
         "city": "Hamburg",
         "gender": "Männlich",
-        "rasse": "Shiba Inu",
+        "breed": "Shiba Inu",
         "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
-        "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu"
+        "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "
       }
   ]

@@ -1,6 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import defaultprofilepicture from '../../img/default-profile-picture.png'
+
+
+Profile.propTypes = {
+    name: PropTypes.string,
+    mail: PropTypes.string,
+    plz: PropTypes.number,
+    city: PropTypes.string,
+    gender: PropTypes.string,
+    breed: PropTypes.string,
+    about: PropTypes.string,
+    search: PropTypes.string,
+  }
 
 export default function Profile({
     name,
@@ -8,19 +21,19 @@ export default function Profile({
     plz,
     city,
     gender,
-    rasse,
+    breed,
     about, 
     search
 }) {
     return (
         <>
         <ProfileStyled>
-            <img src={defaultprofilepicture} alt="Cute bulldog puppy"/>
-            <span className="profileMain"><p className="profileTitle">{name}</p>
+            <img src={defaultprofilepicture} alt="sitting bulldog puppy"/>
+            <span className="profile-main"><p className="profile-title">{name}</p>
             {mail}<br /> 
             {plz} {city}<br />
             Mein Hund ist: {gender}<br />
-            Rasse: {rasse}<br />
+            Rasse: {breed}<br />
             </span>
             <p className="about">Über uns: <br />{about}</p>
             <p className="search">Nach was wir suchen: <br />{search}</p>
@@ -44,16 +57,16 @@ p {
     margin-bottom: 3px;
 }
 img {
-    max-width:100%;
-    height:auto;
+    width: 100%;
+    height: auto;
 }
-.profileMain {
+.profile-main {
     margin-bottom: 20px;
     margin-left: 10px;
     line-height: 1.5;
     font-size: 16px;
 }
-.profileTitle {
+.profile-title {
     font-weight: bold;
     font-size: 20px;
 }
@@ -65,6 +78,3 @@ img {
     grid-column: 1/3;
 }
 `
-
-
-

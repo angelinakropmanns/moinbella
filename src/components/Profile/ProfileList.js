@@ -14,7 +14,7 @@ export default function (){
                 plz={profile.plz}
                 city={profile.city}
                 gender={profile.gender}
-                rasse={profile.rasse}
+                breed={profile.breed}
                 about={profile.about}
                 search={profile.search} />
             )
