@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import defaultprofilepicture from '../default-profile-picture.png'
+import defaultprofilepicture from '../../img/default-profile-picture.png'
 
 export default function Profile({
     name,
@@ -15,7 +15,7 @@ export default function Profile({
     return (
         <>
         <ProfileStyled>
-            <img src={defaultprofilepicture} />
+            <img src={defaultprofilepicture} alt="Cute bulldog puppy"/>
             <span className="profileMain"><p className="profileTitle">{name}</p>
             {mail}<br /> 
             {plz} {city}<br />

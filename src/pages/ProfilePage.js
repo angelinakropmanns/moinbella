@@ -1,17 +1,13 @@
 import React from 'react'
-import styled from 'styled-components/macro'
-import ProfileList from '../components/ProfileList'
+import ProfileList from '../components/Profile/ProfileList'
+import Headline from '../components/Headline/Headline'
 
 export default function (){
     return (
         <>
-        <HeadlineStyled>Eure neuen Freunde</HeadlineStyled>
+        <Headline>Eure neuen Freunde</Headline>
         <ProfileList />
         </>
     )
 }
-
-const HeadlineStyled = styled.span`
-    font-size: 23px;
-`
 
