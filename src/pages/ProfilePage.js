@@ -6,7 +6,7 @@ export default function (onToggleProfile){
     return (
         <>
         <Headline>Eure neuen Freunde</Headline>
-        <ProfileList onClick={onToggleProfile}/>
+        <ProfileList/>
         </>
     )
 }
