@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import userData from '../../profiles.json'
+import user from '../../profiles.json'
 import Profile from './Profile'
 
 export default function (){
-    const [profiles, setProfiles] = useState(userData)
+    const [profiles, setProfiles] = useState(user)
 
     return (
         <>

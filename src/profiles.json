@@ -22,17 +22,5 @@
         "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
         "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
         "isHidden": false
-      },
-      {
-        "id": "3",
-        "name": "Test",
-        "mail": "test@gmail.com",
-        "plz": 20535,
-        "city": "Hamburg",
-        "gender": "Männlich",
-        "breed": "Schäferhund",
-        "about": "",
-        "search": "",
-        "isHidden": false
       }
   ]
