@@ -9,7 +9,7 @@
       "breed": "Bulldogge",
       "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
       "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
-      "isHidden": false
+      "isHidden": true
     },
     {
         "id": "2",
@@ -21,6 +21,6 @@
         "breed": "Shiba Inu",
         "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
         "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
-        "isHidden": false
+        "isHidden": true
       }
   ]

@@ -10,7 +10,7 @@ export default function (){
         <p>{profiles.map(
             (profile) => (
                 <Profile 
-                onClick={() => toggleProfile(profile)}
+                showProfile={() => toggleProfile(profile)}
                 key={profile.id}
                 name={profile.name}
                 mail={profile.mail}

@@ -13,6 +13,8 @@ Profile.propTypes = {
     breed: PropTypes.string,
     about: PropTypes.string,
     search: PropTypes.string,
+    onClick: PropTypes.func,
+    isHidden: PropTypes.bool
   }
 
 export default function Profile({
@@ -24,12 +26,12 @@ export default function Profile({
     breed,
     about, 
     search,
-    onClick,
+    showProfile,
     isHidden
 }) {
     return (
         <>
-        <ProfileStyled onClick={onClick}>
+        <ProfileStyled onClick={showProfile}>
             <img src={defaultprofilepicture} alt="sitting bulldog puppy"/>
             <ProfileMainStyled>
                 <ProfileTitleStyled>
@@ -40,12 +42,12 @@ export default function Profile({
                     Mein Hund ist: {gender}<br />
                     Rasse: {breed}<br />
             </ProfileMainStyled>
-            {isHidden || 
+            {isHidden && 
                 <ArrowStyled>
                     &darr;
                 </ArrowStyled>
             }
-            {isHidden && (
+            {isHidden || (
                 <>
                     <p className="about">Über uns: <br />{about}</p>
                     <p className="search">Wonach wir suchen: <br />{search}</p>
