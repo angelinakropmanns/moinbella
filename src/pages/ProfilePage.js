@@ -6,7 +6,7 @@ export default function (){
     return (
         <>
         <Headline>Eure neuen Freunde</Headline>
-        <ProfileList />
+        <ProfileList/>
         </>
     )
 }

@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/profiles">
           <ProfilePage />
-        </Route>s
+        </Route>
       </Switch>
       </BodyStyled>
       </Router>
