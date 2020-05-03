@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import logo from '../../img/Logo.png'
+import logo from '../../img/logo.png'
 
 export default function Header () {
     return (
@@ -12,4 +12,9 @@ export default function Header () {
 
 const HeaderStyled = styled.section`
     item-align: center;
+    height: 48px;
+    img {
+        max-height: 100%;
+        width: auto;
+    }
 `
