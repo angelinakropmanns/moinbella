@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useToggle } from 'react-hooks-lib'
 import styled from 'styled-components/macro'
 import defaultprofilepicture from '../../img/default-profile-picture.png'
 
@@ -25,13 +26,12 @@ export default function Profile({
     gender,
     breed,
     about, 
-    search,
-    showProfile,
-    isHidden
+    search
 }) {
+    const { on, toggle } = useToggle(false) 
     return (
         <>
-        <ProfileStyled onClick={showProfile}>
+        <ProfileStyled onClick={toggle}>
             <img src={defaultprofilepicture} alt="sitting bulldog puppy"/>
             <ProfileMainStyled>
                 <ProfileTitleStyled>
@@ -42,12 +42,12 @@ export default function Profile({
                     Mein Hund ist: {gender}<br />
                     Rasse: {breed}<br />
             </ProfileMainStyled>
-            {isHidden && 
+            {on || 
                 <ArrowStyled>
                     &darr;
                 </ArrowStyled>
             }
-            {isHidden || (
+            {on && (
                 <>
                     <p className="about">Über uns: <br />{about}</p>
                     <p className="search">Wonach wir suchen: <br />{search}</p>
