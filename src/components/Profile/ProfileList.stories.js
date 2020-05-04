@@ -7,5 +7,5 @@ export default {
 }
 
 export const testProfiles = () => {
-return <ProfileList />
+  return <ProfileList />
 }
