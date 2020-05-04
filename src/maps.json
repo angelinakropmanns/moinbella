@@ -1,0 +1,29 @@
+[
+    {
+      "id": "1",
+      "name": "Auslauffläche Walter-Möller-Park",
+      "groeße": 2500,
+      "einzaeunung": "Vollständig eingezäunt",
+      "boden": "Gras",
+      "nahverkehr": "Bus 283, Haltestelle Paul-Roosen-Straße",
+      "coordinates": [53.553724, 9.952258]
+    },
+    {
+        "id": "2",
+        "name": "Hundewiese Alsenpark",
+        "groeße": 2400,
+        "einzaeunung": "Vollständig eingezäunt",
+        "boden": "Gras",
+        "nahverkehr": "Bus 183/283, Haltestelle Augustenburger Straße",
+        "coordinates": [53.565938, 9.947990]
+      },
+      {
+        "id": "3",
+        "name": "Auslauffläche Baurstraße",
+        "groeße": 1590,
+        "einzaeunung": "Nicht eingezäunt",
+        "boden": "Gras",
+        "nahverkehr": "S1/S11, Bus 37/283, Haltestelle S Bahrenfeld",
+        "coordinates": [53.560679, 9.902605]
+      }
+  ] 

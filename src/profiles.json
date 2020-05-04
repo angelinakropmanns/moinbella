@@ -22,5 +22,17 @@
         "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
         "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
         "isHidden": true
+      },
+      {
+        "id": "3",
+        "name": "Angelina",
+        "mail": "angelina.kropmanns@gmail.com",
+        "plz": 20535,
+        "city": "Hamburg",
+        "gender": "Männlich",
+        "breed": "Mops",
+        "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+        "search": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+        "isHidden": true
       }
   ]
