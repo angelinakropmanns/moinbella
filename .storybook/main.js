@@ -7,4 +7,4 @@ module.exports = {
     '@storybook/addon-knobs/register',
     '@storybook/addon-viewport/register',
   ],
-};
+}

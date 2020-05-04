@@ -1,5 +1,5 @@
-import {createGlobalStyle} from 'styled-components/macro'
- 
+import { createGlobalStyle } from 'styled-components/macro'
+
 export default createGlobalStyle`
  
 * {
@@ -11,6 +11,10 @@ export default createGlobalStyle`
    grid-template-rows: 48px auto;
    height: 100vh;
 }
+
+main {
+   overflow: scroll;
+}
  
 body {
        color: #414756;
@@ -21,7 +25,8 @@ body {
        text-align: center;
        align-items: center;
    }
-main {
-   overflow: scroll;
+
+footer {
+   font-size: 14px;
 }
 `

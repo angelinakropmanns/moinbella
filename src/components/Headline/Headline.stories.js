@@ -1,6 +1,6 @@
 import React from 'react'
 import Headline from './Headline'
-import {withKnobs,text} from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
 export default {
   title: 'Headline',
@@ -9,5 +9,5 @@ export default {
 }
 
 export const HeadlineTesting = () => {
-return <Headline>{text('Children','Headline')}</Headline>
+  return <Headline>{text('Children', 'Headline')}</Headline>
 }
