@@ -1,11 +1,17 @@
 import React from 'react'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
+import ReactLeafletSearch from 'react-leaflet-search'
 import mapsData from '../maps.json'
 import styled from 'styled-components/macro'
 
 const dog = new Icon({
-  iconUrl: '/marker-maps.png',
+  iconUrl: '/maps-marker.png',
+  iconSize: [24, 35],
+})
+
+const iconSearch = new Icon({
+  iconUrl: '/maps-marker-search.png',
   iconSize: [24, 35],
 })
 
@@ -26,6 +32,13 @@ export default function Maps() {
               icon={dog}
             />
           ))}
+          <ReactLeafletSearch
+            position="topright"
+            markerIcon={iconSearch}
+            inputPlaceholder="Gib einen Ort ein"
+            zoom={12}
+            showPopup={false}
+          />
         </Map>
       </MapStyled>
     </>
