@@ -72,12 +72,8 @@ export default function Maps() {
 }
 
 const MapStyled = styled.section`
-  margin-top: 6px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 8px;
   .leaflet-container {
     width: 360px;
-    height: 530px;
+    height: 520px;
   }
 `

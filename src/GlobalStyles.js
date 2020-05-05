@@ -14,6 +14,10 @@ export default createGlobalStyle`
 
 main {
    overflow: scroll;
+   margin-top: 12px;
+   margin-bottom: 12px;
+   margin-left: auto;
+   margin-right: auto;
 }
  
 body {
