@@ -1,24 +1,28 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
+import StartPage from './pages/StartPage'
 import Header from './components/Header'
 import ProfilePage from './pages/ProfilePage'
-import MapsIcon from './components/MapsIcon/MapsIcon'
 import MapPage from './pages/MapPage'
-import ProfileIcon from './components/ProfileIcon/ProfileIcon'
+import Navigation from './components/Navigation/Navigation'
 
 function App() {
   return (
     <Router>
-      <Header />
       <Switch>
+        <Route exact path="/">
+          <StartPage />
+        </Route>
         <Route exact path="/profiles">
+          <Header />
           <ProfilePage />
-          <MapsIcon />
+          <Navigation />
         </Route>
         <Route exact path="/maps">
+          <Header />
           <MapPage />
-          <ProfileIcon />
+          <Navigation />
         </Route>
       </Switch>
     </Router>
