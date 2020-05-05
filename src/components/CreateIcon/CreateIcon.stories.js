@@ -6,6 +6,6 @@ export default {
   component: CreateIcon,
 }
 
-export const CreateIconSimple = () => {
+export const SimpleCreateIcon = () => {
   return <CreateIcon />
 }

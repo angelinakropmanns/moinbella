@@ -3,9 +3,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
 import StartPage from './pages/StartPage'
 import Header from './components/Header'
-import ProfilePage from './pages/ProfilePage'
-import MapPage from './pages/MapPage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import MapsPage from './pages/MapsPage'
 import Navigation from './components/Navigation/Navigation'
+import CreatePage from './pages/CreatePage'
 
 function App() {
   return (
@@ -14,14 +15,19 @@ function App() {
         <Route exact path="/">
           <StartPage />
         </Route>
-        <Route exact path="/profiles">
+        <Route path="/profiles">
           <Header />
           <ProfilePage />
           <Navigation />
         </Route>
-        <Route exact path="/maps">
+        <Route path="/maps">
           <Header />
-          <MapPage />
+          <MapsPage />
+          <Navigation />
+        </Route>
+        <Route path="/create">
+          <Header />
+          <CreatePage />
           <Navigation />
         </Route>
       </Switch>

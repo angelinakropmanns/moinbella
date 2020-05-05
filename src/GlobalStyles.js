@@ -14,6 +14,7 @@ export default createGlobalStyle`
 
 main {
    overflow: scroll;
+   margin: 12px auto 12px auto;
 }
  
 body {

@@ -8,6 +8,6 @@ export default {
   decorators: [withKnobs],
 }
 
-export const HeadlineTesting = () => {
+export const SimpleHeadline = () => {
   return <Headline>{text('Children', 'Headline')}</Headline>
 }

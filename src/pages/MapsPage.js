@@ -4,6 +4,7 @@ import { Icon } from 'leaflet'
 import ReactLeafletSearch from 'react-leaflet-search'
 import mapsData from '../maps.json'
 import styled from 'styled-components/macro'
+import Headline from '../components/Headline/Headline'
 
 const dog = new Icon({
   iconUrl: '/maps-marker.png',
@@ -19,7 +20,8 @@ export default function Maps() {
   const [activePlace, setActivePlace] = useState(null)
 
   return (
-    <>
+    <main>
+      <Headline>Hundeplätze</Headline>
       <MapStyled>
         <Map center={[53.55, 9.99]} zoom={12}>
           <TileLayer
@@ -67,17 +69,13 @@ export default function Maps() {
           />
         </Map>
       </MapStyled>
-    </>
+    </main>
   )
 }
 
 const MapStyled = styled.section`
-  margin-top: 6px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 8px;
   .leaflet-container {
     width: 360px;
-    height: 530px;
+    height: 520px;
   }
 `
