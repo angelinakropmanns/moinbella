@@ -1,5 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+
+Button.propTypes = {
+  children: PropTypes.string,
+}
 
 export default function Button({ children }) {
   return <ButtonStyled type="submit">{children}</ButtonStyled>

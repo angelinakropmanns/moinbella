@@ -1,22 +1,22 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { render } from '@testing-library/react'
-import ProfileList from './ProfileList'
+import ProfilePage from './ProfilePage'
 
-test('rendering Profile List', () => {
+test('rendering Profile Page', () => {
   const { getByText } = render(
     <MemoryRouter>
-      <ProfileList />
+      <ProfilePage />
     </MemoryRouter>
   )
   const linkElement = getByText(/Bulldogge/i)
   expect(linkElement).toBeInTheDocument()
 })
 
-test('rendering Profile List', () => {
+test('rendering Profile Page', () => {
   const { getByText } = render(
     <MemoryRouter>
-      <ProfileList />
+      <ProfilePage />
     </MemoryRouter>
   )
   const linkElement = getByText(/Shiba Inu/i)

@@ -96,15 +96,6 @@ const StyledInputLong = styled.textarea`
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `
 
-const ErrorMsg = styled.p`
-  font-size: 12px;
-  color: red;
-  text-align: left;
-  line-height: 1;
-  margin-top: 0;
-  margin-bottom: 8px;
-`
-
 const StyledText = styled.p`
   font-size: 12px;
 `

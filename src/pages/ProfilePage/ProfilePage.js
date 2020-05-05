@@ -1,10 +1,12 @@
 import React from 'react'
 import profiles from '../../profiles.json'
-import Profile from './Profile'
+import Profile from '../../components/Profile/Profile'
+import Headline from '../../components/Headline/Headline'
 
-export default function () {
+export default function ProfilePage() {
   return (
-    <>
+    <main>
+      <Headline>Eure neuen Freunde</Headline>
       <p>
         {profiles.map((profile) => (
           <Profile
@@ -21,6 +23,6 @@ export default function () {
           />
         ))}
       </p>
-    </>
+    </main>
   )
 }
