@@ -6,6 +6,6 @@ export default {
   component: MapsIcon,
 }
 
-export const MapsIconSimple = () => {
+export const SimpleMapsIcon = () => {
   return <MapsIcon />
 }

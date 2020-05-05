@@ -15,17 +15,17 @@ function App() {
         <Route exact path="/">
           <StartPage />
         </Route>
-        <Route exact path="/profiles">
+        <Route path="/profiles">
           <Header />
           <ProfilePage />
           <Navigation />
         </Route>
-        <Route exact path="/maps">
+        <Route path="/maps">
           <Header />
           <MapsPage />
           <Navigation />
         </Route>
-        <Route exact path="/create">
+        <Route path="/create">
           <Header />
           <CreatePage />
           <Navigation />

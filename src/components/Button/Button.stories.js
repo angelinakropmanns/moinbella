@@ -8,6 +8,6 @@ export default {
   decorators: [withKnobs],
 }
 
-export const ButtonTesting = () => {
+export const SimpleButton = () => {
   return <Button>{text('Children', 'Button')}</Button>
 }

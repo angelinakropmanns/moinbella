@@ -6,6 +6,6 @@ export default {
   component: ProfileIcon,
 }
 
-export const ProfileIconSimple = () => {
+export const SimpleProfileIcon = () => {
   return <ProfileIcon />
 }
