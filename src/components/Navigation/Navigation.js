@@ -27,12 +27,13 @@ const NavigationStyled = styled.footer`
 `
 
 const ProfileIconStyled = styled.span`
+  margin-top: 4px;
   height: 48px;
   width: 48px;
 `
 
 const MapsIconStyled = styled.span`
-  height: 36px;
-  width: 36px;
   margin-top: 4px;
+  height: 28px;
+  width: 28px;
 `
