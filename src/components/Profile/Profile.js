@@ -7,7 +7,7 @@ import defaultprofilepicture from '../../img/default-profile-picture.png'
 Profile.propTypes = {
   name: PropTypes.string,
   mail: PropTypes.string,
-  plz: PropTypes.number,
+  plz: PropTypes.string,
   city: PropTypes.string,
   gender: PropTypes.string,
   breed: PropTypes.string,
@@ -31,7 +31,10 @@ export default function Profile({
       <ProfileStyled onClick={toggle}>
         <img src={defaultprofilepicture} alt="sitting bulldog puppy" />
         <ProfileMainStyled>
-          <ProfileTitleStyled>{name}</ProfileTitleStyled>
+          <ProfileTitleStyled>
+            {name}
+            <br />
+          </ProfileTitleStyled>
           {mail}
           <br />
           {plz} {city}
@@ -88,7 +91,7 @@ const ProfileStyled = styled.section`
   }
 `
 
-const ProfileTitleStyled = styled.p`
+const ProfileTitleStyled = styled.span`
   font-weight: bold;
   font-size: 20px;
 `

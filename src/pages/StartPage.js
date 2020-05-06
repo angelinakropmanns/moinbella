@@ -14,14 +14,16 @@ export default function StartPage() {
       <ImageStyled>
         <img src={defaultprofilepicture} alt="sitting bulldog puppy" />
       </ImageStyled>
-      <ProfileIconStyled>
-        <ProfileIcon />
-        <span>Profile</span>
-      </ProfileIconStyled>
-      <CreateIconStyled>
-        <CreateIcon />
-        <span>Profil erstellen</span>
-      </CreateIconStyled>
+      <IconContainerStyled>
+        <ProfileIconStyled>
+          <ProfileIcon />
+        </ProfileIconStyled>
+        <TextProfileStyled>Profile</TextProfileStyled>
+        <CreateIconStyled>
+          <CreateIcon />
+        </CreateIconStyled>
+        <TextMapsStyled>Profil erstellen</TextMapsStyled>
+      </IconContainerStyled>
     </StartPageStyled>
   )
 }
@@ -33,7 +35,7 @@ const StartPageStyled = styled.section`
 `
 
 const TitleStyled = styled.h1`
-  margin-top: 48px;
+  margin-top: 28px;
   grid-column: 1/3;
   grid-row: 1/2;
   img {
@@ -45,26 +47,55 @@ const TitleStyled = styled.h1`
 const ImageStyled = styled.section`
   grid-column: 1/3;
   grid-row: 2/3;
+  margin-top: 20px;
+  margin-bottom: 20px;
   img {
     width: 240px;
     height: auto;
   }
 `
 
+const IconContainerStyled = styled.section`
+  grid-column: 1/3;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr;
+  width: 240px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+`
+
 const ProfileIconStyled = styled.section`
   grid-column: 2/3;
-  grid-row: 3/4;
-  width: 60px;
-  height: 60px;
-  margin-top: 8px;
-  margin-left: 68px;
+  grid-row: 1/2;
+  justify-self: end;
+  margin-right: 32px;
+  width: 40px;
+  height: 40px;
+  margin-top: 12px;
 `
 
 const CreateIconStyled = styled.section`
   grid-column: 1/2;
-  grid-row: 3/4;
-  width: 44px;
-  height: 44px;
+  grid-row: 1/2;
+  justify-self: start;
+  margin-left: 32px;
+  width: 28px;
+  height: 28px;
   margin-top: 12px;
-  margin-left: 60px;
+`
+
+const TextProfileStyled = styled.span`
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: end;
+  margin-right: 32px;
+`
+
+const TextMapsStyled = styled.span`
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: start;
 `

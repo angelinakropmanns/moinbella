@@ -8,13 +8,19 @@ export default createGlobalStyle`
  
 #root {
    display: grid;
-   grid-template-rows: 48px auto;
+   grid-template-rows: 48px auto 48px;
    height: 100vh;
 }
 
+header {
+   grid-row: 1/2;
+}
+
 main {
+   grid-row: 2/3;
    overflow: scroll;
    margin: 12px auto 12px auto;
+   height: 100%;
 }
  
 body {
@@ -28,6 +34,9 @@ body {
    }
 
 footer {
+   grid-row: 3/4;
    font-size: 14px;
+   height: 48px;
+   position: bottom;
 }
 `
