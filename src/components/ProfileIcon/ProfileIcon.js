@@ -15,6 +15,6 @@ export default function ProfileIcon() {
 const LinkStyled = styled(NavLink)`
   display: flex;
   &.selected {
-    filter: invert(80%);
+    filter: invert(50%);
   }
 `
