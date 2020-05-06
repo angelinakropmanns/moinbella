@@ -14,4 +14,7 @@ export default function MapsIcon() {
 
 const LinkStyled = styled(NavLink)`
   display: flex;
+  &.selected {
+    filter: invert(100%);
+  }
 `
