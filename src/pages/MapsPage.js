@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { db } from '../Firebase'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import ReactLeafletSearch from 'react-leaflet-search'
-import mapsData from '../maps.json'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
 
@@ -17,7 +17,21 @@ const iconSearch = new Icon({
 })
 
 export default function Maps() {
+  const [place, setPlace] = useState([])
   const [activePlace, setActivePlace] = useState(null)
+
+  useEffect(() => {
+    const places = db.collection('dogplaces').onSnapshot((snapshot) => {
+      const allPlaces = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setPlace(allPlaces)
+    })
+    return () => {
+      places()
+    }
+  }, [])
 
   return (
     <main>
@@ -29,10 +43,10 @@ export default function Maps() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
 
-          {mapsData.map((place) => (
+          {place.map((place) => (
             <Marker
               key={place.id}
-              position={[place.coordinates[0], place.coordinates[1]]}
+              position={[place.lat, place.long]}
               icon={dog}
               onClick={() => {
                 setActivePlace(place)
