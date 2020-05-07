@@ -10,11 +10,11 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const profiles = db.collection('users').onSnapshot((snapshot) => {
-      const allProfiles = snapshot.docs.map((doc) => ({
+      const allUser = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }))
-      setUser(allProfiles)
+      setUser(allUser)
     })
     return () => {
       profiles()
