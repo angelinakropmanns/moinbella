@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useToggle } from 'react-hooks-lib'
 import { db } from '../Firebase'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
@@ -15,6 +16,8 @@ export default function Form() {
     about: '',
     search: '',
   })
+
+  const { on, toggle } = useToggle(false)
 
   return (
     <main>
@@ -34,7 +37,7 @@ export default function Form() {
         <label htmlFor="mail">E-Mail*:</label>
 
         <InputStyled
-          id="email"
+          id="mail"
           name="mail"
           type="email"
           value={user.mail}
@@ -87,24 +90,33 @@ export default function Form() {
           placeholder="Die Rasse deines Hundes"
           required
         />
-        <label htmlFor="about">Über uns:</label>
-        <LongInputStyled
-          id="about"
-          name="about"
-          type="text"
-          value={user.about}
-          onChange={handleChange}
-          placeholder="Z.B. der Name deines Hundes, was ihr gerne macht..."
-        />
-        <label htmlFor="search">Wonach wir suchen:</label>
-        <LongInputStyled
-          id="search"
-          name="search"
-          type="text"
-          value={user.search}
-          onChange={handleChange}
-          placeholder="Wonach ihr sucht, z.B. regelmäßige Treffen..."
-        />
+        {on || (
+          <FormTextStyled onClick={toggle}>
+            Erweitertes Profil anlegen
+          </FormTextStyled>
+        )}
+        {on && (
+          <>
+            <label htmlFor="about">Über uns:</label>
+            <LongInputStyled
+              id="about"
+              name="about"
+              type="text"
+              value={user.about}
+              onChange={handleChange}
+              placeholder="Z.B. der Name deines Hundes, was ihr gerne macht..."
+            />
+            <label htmlFor="search">Wonach wir suchen:</label>
+            <LongInputStyled
+              id="search"
+              name="search"
+              type="text"
+              value={user.search}
+              onChange={handleChange}
+              placeholder="Wonach ihr sucht, z.B. regelmäßige Treffen..."
+            />
+          </>
+        )}
         <Button>Los geht's!</Button>
       </FormStyled>
       <TextStyled>*Pflichtfelder</TextStyled>
@@ -152,7 +164,7 @@ const InputStyled = styled.input`
   background-color: #d8f7fc;
   color: #353b40;
 `
-const InputLongStyled = styled.textarea`
+const LongInputStyled = styled.textarea`
   height: 80px;
   width: 360px;
   border: 0;
@@ -167,6 +179,14 @@ const InputLongStyled = styled.textarea`
   background-color: #d8f7fc;
   color: #353b40;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+`
+
+const FormTextStyled = styled.p`
+  font-size: 14px;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 0;
 `
 
 const TextStyled = styled.p`
