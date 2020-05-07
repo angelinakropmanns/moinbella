@@ -22,7 +22,7 @@ export default function Form() {
       <FormStyled onSubmit={handleSubmit}>
         <label htmlFor="name">Name*:</label>
 
-        <StyledInput
+        <InputStyled
           id="name"
           name="name"
           type="text"
@@ -33,7 +33,7 @@ export default function Form() {
         />
         <label htmlFor="mail">E-Mail*:</label>
 
-        <StyledInput
+        <InputStyled
           id="email"
           name="mail"
           type="email"
@@ -44,7 +44,7 @@ export default function Form() {
         />
         <label htmlFor="plz">Postleitzahl*:</label>
 
-        <StyledInput
+        <InputStyled
           id="plz"
           name="plz"
           type="text"
@@ -56,7 +56,7 @@ export default function Form() {
 
         <label htmlFor="city">Ort*:</label>
 
-        <StyledInput
+        <InputStyled
           id="city"
           name="city"
           type="text"
@@ -68,7 +68,7 @@ export default function Form() {
 
         <label htmlFor="gender">Geschlecht deines Hundes*:</label>
 
-        <StyledInput
+        <InputStyled
           id="gender"
           name="gender"
           type="text"
@@ -78,7 +78,7 @@ export default function Form() {
           required
         />
         <label htmlFor="breed">Hunderasse*:</label>
-        <StyledInput
+        <InputStyled
           id="breed"
           name="breed"
           type="text"
@@ -88,7 +88,7 @@ export default function Form() {
           required
         />
         <label htmlFor="about">Über uns:</label>
-        <StyledInputLong
+        <LongInputStyled
           id="about"
           name="about"
           type="text"
@@ -97,7 +97,7 @@ export default function Form() {
           placeholder="Z.B. der Name deines Hundes, was ihr gerne macht..."
         />
         <label htmlFor="search">Wonach wir suchen:</label>
-        <StyledInputLong
+        <LongInputStyled
           id="search"
           name="search"
           type="text"
@@ -107,7 +107,7 @@ export default function Form() {
         />
         <Button>Los geht's!</Button>
       </FormStyled>
-      <StyledText>*Pflichtfelder</StyledText>
+      <TextStyled>*Pflichtfelder</TextStyled>
     </main>
   )
 
@@ -137,7 +137,7 @@ const FormStyled = styled.form`
   margin-right: auto;
 `
 
-const StyledInput = styled.input`
+const InputStyled = styled.input`
   height: 32px;
   width: 360px;
   border: 0;
@@ -152,7 +152,7 @@ const StyledInput = styled.input`
   background-color: #d8f7fc;
   color: #353b40;
 `
-const StyledInputLong = styled.textarea`
+const InputLongStyled = styled.textarea`
   height: 80px;
   width: 360px;
   border: 0;
@@ -169,6 +169,6 @@ const StyledInputLong = styled.textarea`
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `
 
-const StyledText = styled.p`
+const TextStyled = styled.p`
   font-size: 12px;
 `
