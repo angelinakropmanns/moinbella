@@ -26,6 +26,7 @@ const FilterStyled = styled.form`
   justify-content: right;
   margin-top: 16px;
   margin-right: 4px;
+  margin-left: 4px;
 `
 
 const InputStyled = styled.input`
