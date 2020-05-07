@@ -20,7 +20,6 @@ main {
    grid-row: 2/3;
    overflow: scroll;
    margin: 12px auto 12px auto;
-   height: 100%;
 }
  
 body {
