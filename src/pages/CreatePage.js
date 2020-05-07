@@ -138,13 +138,14 @@ const FormStyled = styled.form`
 `
 
 const StyledInput = styled.input`
-  height: 36px;
+  height: 32px;
   width: 360px;
   border: 0;
   border-radius: 2px;
   padding: 4px;
-  font-family: serif;
-  font-size: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
   margin-top: 12px;
   margin-bottom: 12px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -158,8 +159,9 @@ const StyledInputLong = styled.textarea`
   border-radius: 2px;
   padding-top: 12px;
   padding-left: 4px;
-  font-family: serif;
-  font-size: 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: #d8f7fc;
