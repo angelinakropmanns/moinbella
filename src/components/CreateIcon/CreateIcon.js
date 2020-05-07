@@ -14,4 +14,8 @@ export default function CreateIcon() {
 
 const LinkStyled = styled(NavLink)`
   display: flex;
+  img {
+    height: 40px;
+    width: auto;
+  }
 `

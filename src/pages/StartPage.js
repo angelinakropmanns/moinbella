@@ -72,8 +72,6 @@ const ProfileIconStyled = styled.section`
   grid-row: 1/2;
   justify-self: end;
   margin-right: 32px;
-  width: 40px;
-  height: 40px;
   margin-top: 12px;
 `
 
@@ -82,8 +80,6 @@ const CreateIconStyled = styled.section`
   grid-row: 1/2;
   justify-self: start;
   margin-left: 32px;
-  width: 28px;
-  height: 28px;
   margin-top: 12px;
 `
 

@@ -38,5 +38,6 @@ footer {
    font-size: 14px;
    height: 48px;
    position: bottom;
+   z-index: 1;
 }
 `

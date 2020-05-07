@@ -14,6 +14,10 @@ export default function ProfileIcon() {
 
 const LinkStyled = styled(NavLink)`
   display: flex;
+  img {
+    height: 40px;
+    width: auto;
+  }
   &.selected {
     filter: invert(50%);
   }

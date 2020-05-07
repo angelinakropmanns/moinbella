@@ -23,17 +23,12 @@ const NavigationStyled = styled.footer`
   box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.2);
   margin-right: 0;
   margin-left: 0;
-  height: 48px;
 `
 
 const ProfileIconStyled = styled.span`
   margin-top: 4px;
-  height: 48px;
-  width: 48px;
 `
 
 const MapsIconStyled = styled.span`
   margin-top: 4px;
-  height: 28px;
-  width: 28px;
 `
