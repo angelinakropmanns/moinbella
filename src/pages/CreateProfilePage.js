@@ -3,9 +3,9 @@ import { useToggle } from 'react-hooks-lib'
 import { db } from '../Firebase'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
-import Button from '../components/Button/Button'
+import SubmitButton from '../components/SubmitButton/SubmitButton'
 
-export default function Form() {
+export default function CreateProfilePage() {
   const [user, setUser] = useState({
     name: '',
     mail: '',
@@ -117,7 +117,7 @@ export default function Form() {
             />
           </>
         )}
-        <Button>Los geht's!</Button>
+        <SubmitButton>Los geht's!</SubmitButton>
       </FormStyled>
       <TextStyled>*Pflichtfelder</TextStyled>
     </main>

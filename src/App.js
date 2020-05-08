@@ -6,7 +6,8 @@ import Header from './components/Header'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import MapsPage from './pages/MapsPage'
 import Navigation from './components/Navigation/Navigation'
-import CreatePage from './pages/CreatePage'
+import CreateProfilePage from './pages/CreateProfilePage'
+import CreatePlacePage from './pages/CreatePlacePage'
 
 function App() {
   return (
@@ -27,7 +28,12 @@ function App() {
         </Route>
         <Route path="/create">
           <Header />
-          <CreatePage />
+          <CreateProfilePage />
+          <Navigation />
+        </Route>
+        <Route path="/create-place">
+          <Header />
+          <CreatePlacePage />
           <Navigation />
         </Route>
       </Switch>

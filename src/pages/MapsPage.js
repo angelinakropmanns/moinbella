@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { db } from '../Firebase'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import ReactLeafletSearch from 'react-leaflet-search'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
+import AddButton from '../components/AddButton/AddButton'
 
 const dog = new Icon({
   iconUrl: '/maps-marker.png',
@@ -36,6 +38,11 @@ export default function Maps() {
   return (
     <main>
       <Headline>Hundeplätze</Headline>
+      <AddButtonStyled>
+        <Link to="/create-place">
+          <AddButton>Hundeplatz hinzufügen</AddButton>
+        </Link>
+      </AddButtonStyled>
       <MapStyled>
         <Map center={[53.55, 9.99]} zoom={12}>
           <TileLayer
@@ -84,9 +91,16 @@ export default function Maps() {
   )
 }
 
+const AddButtonStyled = styled.span`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+  margin-top: 0;
+`
+
 const MapStyled = styled.section`
   .leaflet-container {
     width: 360px;
-    height: 520px;
+    height: 488px;
   }
 `
