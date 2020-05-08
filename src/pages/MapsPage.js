@@ -56,10 +56,7 @@ export default function Maps() {
 
           {activePlace && (
             <Popup
-              position={[
-                activePlace.coordinates[0],
-                activePlace.coordinates[1],
-              ]}
+              position={[activePlace.lat, activePlace.long]}
               onClose={() => !setActivePlace()}
             >
               <div>
