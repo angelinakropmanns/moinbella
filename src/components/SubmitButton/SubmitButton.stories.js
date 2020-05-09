@@ -9,5 +9,5 @@ export default {
 }
 
 export const SimpleSubmitButton = () => {
-  return <SubmitButton>{text('Children', 'Button')}</SubmitButton>
+  return <SubmitButton>{text('Children', 'Submit')}</SubmitButton>
 }

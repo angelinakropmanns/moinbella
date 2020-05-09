@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../../Firebase'
 import Headline from '../../components/Headline/Headline'
 import Profile from '../../components/Profile/Profile'
-import Filter from '../../components/Filter'
+import Filter from '../../components/Filter/Filter'
 
 export default function ProfilePage() {
   const [user, setUser] = useState([])
