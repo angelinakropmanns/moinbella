@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-Button.propTypes = {
+SubmitButton.propTypes = {
   children: PropTypes.string,
 }
 
-export default function Button({ children }) {
+export default function SubmitButton({ children }) {
   return <ButtonStyled type="submit">{children}</ButtonStyled>
 }
 
@@ -14,6 +14,7 @@ const ButtonStyled = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #414756;
   font-size: 14px;
   height: 28px;
   width: 96px;

@@ -1,21 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Button from './Button'
+import SubmitButton from './SubmitButton'
 
-test('renders Button', () => {
+test('renders Submit Button', () => {
   const container = document.createElement('div')
-  ReactDOM.render(<Button>Button</Button>, container)
+  ReactDOM.render(<SubmitButton>Button</SubmitButton>, container)
   expect(container.textContent).toBe('Button')
 })
 
-test('renders Button', () => {
+test('renders Submit Button', () => {
   const container = document.createElement('div')
-  ReactDOM.render(<Button>Los gehts!</Button>, container)
+  ReactDOM.render(<SubmitButton>Los gehts!</SubmitButton>, container)
   expect(container.textContent).toBe('Los gehts!')
 })
 
-test('renders Button', () => {
+test('renders Submit Button', () => {
   const container = document.createElement('div')
-  ReactDOM.render(<Button>Submit</Button>, container)
+  ReactDOM.render(<SubmitButton>Submit</SubmitButton>, container)
   expect(container.textContent).toBe('Submit')
 })
