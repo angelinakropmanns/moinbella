@@ -39,26 +39,30 @@ export default function CreatePlacePage() {
           placeholder="Ist der Hundeplatz z.B. eingezäunt?"
           required
         />
-        <label htmlFor="lat">Breitengrad (Latitude)*:</label>
-        <InputStyled
-          id="lat"
-          name="lat"
-          type="number"
-          value={place.lat}
-          onChange={handleChange}
-          placeholder="Bitte gib den genauen Breitengrad an"
-          required
-        />
-        <label htmlFor="long">Längengrad (Longitude)*:</label>
-        <InputStyled
-          id="long"
-          name="long"
-          type="number"
-          value={place.long}
-          onChange={handleChange}
-          placeholder="Bitte gib den genauen Längengrad an"
-          required
-        />
+        <CoordinatesContainerLatStyled>
+          <label htmlFor="lat">Breitengrad (Lat.)*:</label>
+          <CoordinatesInputLatStyled
+            id="lat"
+            name="lat"
+            type="number"
+            value={place.lat}
+            onChange={handleChange}
+            placeholder="z.B. 53.56575"
+            required
+          />
+        </CoordinatesContainerLatStyled>
+        <CoordinatesContainerLongStyled>
+          <label htmlFor="long">Längengrad (Long.)*:</label>
+          <CoordinatesInputLongStyled
+            id="long"
+            name="long"
+            type="number"
+            value={place.long}
+            onChange={handleChange}
+            placeholder="z.B. 9.807627"
+            required
+          />
+        </CoordinatesContainerLongStyled>
         <label htmlFor="ground">Bodenbeschaffenheit:</label>
         <InputStyled
           id="ground"
@@ -132,6 +136,52 @@ const InputStyled = styled.input`
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
+`
+const CoordinatesInputLatStyled = styled.input`
+  height: 32px;
+  width: 168px;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #d8f7fc;
+  color: #353b40;
+`
+const CoordinatesInputLongStyled = styled.input`
+  height: 32px;
+  width: 168px;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 24px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #d8f7fc;
+  color: #353b40;
+`
+
+const CoordinatesContainerLatStyled = styled.div`
+  display: inline-block;
+  label {
+    display: block;
+  }
+`
+
+const CoordinatesContainerLongStyled = styled.div`
+  display: inline-block;
+  label {
+    display: block;
+    margin-left: 24px;
+  }
 `
 
 const TextStyled = styled.p`
