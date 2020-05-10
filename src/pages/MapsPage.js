@@ -18,7 +18,7 @@ const iconSearch = new Icon({
   iconSize: [24, 35],
 })
 
-export default function Maps() {
+export default function MapsPage() {
   const [place, setPlace] = useState([])
   const [activePlace, setActivePlace] = useState(null)
 
@@ -94,8 +94,7 @@ export default function Maps() {
 const AddButtonStyled = styled.span`
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 4px;
-  margin-top: 0;
+  margin: 0 0 4px 0;
 `
 
 const MapStyled = styled.section`

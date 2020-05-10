@@ -47,8 +47,7 @@ const TitleStyled = styled.h1`
 const ImageStyled = styled.section`
   grid-column: 1/3;
   grid-row: 2/3;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
   img {
     width: 240px;
     height: auto;
@@ -63,24 +62,21 @@ const IconContainerStyled = styled.section`
   grid-template-rows: 1fr 1fr;
   width: 240px;
   height: auto;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto 0 auto;
 `
 
 const ProfileIconStyled = styled.section`
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: end;
-  margin-right: 32px;
-  margin-top: 12px;
+  margin: 12px 32px 0 0;
 `
 
 const CreateIconStyled = styled.section`
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: start;
-  margin-left: 32px;
-  margin-top: 12px;
+  margin: 12px 0 0 32px;
 `
 
 const TextProfileStyled = styled.span`

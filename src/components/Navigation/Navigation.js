@@ -21,8 +21,7 @@ const NavigationStyled = styled.footer`
   justify-content: space-around;
   background-color: #aed6dc;
   box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.2);
-  margin-right: 0;
-  margin-left: 0;
+  margin: 0;
 `
 
 const ProfileIconStyled = styled.span`

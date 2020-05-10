@@ -74,8 +74,7 @@ const ProfileStyled = styled.section`
   border-radius: 8px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
   p {
-    margin-top: 0px;
-    margin-bottom: 4px;
+    margin: 0 0 4px 0;
   }
   img {
     width: 100%;
@@ -83,8 +82,7 @@ const ProfileStyled = styled.section`
   }
   .about {
     grid-column: 1/3;
-    margin-top: 12px;
-    margin-bottom: 32px;
+    margin: 12px 0 32px 0;
   }
   .search {
     grid-column: 1/3;
@@ -97,8 +95,7 @@ const ProfileTitleStyled = styled.span`
 `
 
 const ProfileMainStyled = styled.span`
-  margin-bottom: 20px;
-  margin-left: 12px;
+  margin: 0 0 20px 12px;
   line-height: 1.5;
   font-size: 16px;
 `

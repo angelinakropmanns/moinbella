@@ -24,9 +24,7 @@ export default function Filter({ setSearchResult }) {
 const FilterStyled = styled.form`
   display: flex;
   justify-content: right;
-  margin-top: 16px;
-  margin-right: 4px;
-  margin-left: 4px;
+  margin: 16px 4px 0 4px;
 `
 
 const InputStyled = styled.input`

@@ -117,9 +117,7 @@ export default function CreatePlacePage() {
 const FormStyled = styled.form`
   text-align: left;
   width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  margin: 20px auto 0 auto;
 `
 
 const InputStyled = styled.input`
@@ -131,8 +129,7 @@ const InputStyled = styled.input`
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 12px 0 12px 0;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
@@ -146,8 +143,7 @@ const CoordinatesInputLatStyled = styled.input`
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 12px 0 12px 0;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
@@ -161,9 +157,7 @@ const CoordinatesInputLongStyled = styled.input`
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: 24px;
+  margin: 12px 0 12px 24px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
