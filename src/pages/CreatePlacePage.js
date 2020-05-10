@@ -90,7 +90,9 @@ export default function CreatePlacePage() {
           onChange={handleChange}
           placeholder="Bitte gib an, mit welchen öffentlichen Verkehrsmitteln der Hundeplatz erreichbar ist"
         />
-        <SubmitButton>Eintragen</SubmitButton>
+        <SubmitButtonStyled>
+          <SubmitButton>Eintragen</SubmitButton>
+        </SubmitButtonStyled>
       </FormStyled>
       <TextStyled>*Pflichtfelder</TextStyled>
     </main>
@@ -180,4 +182,9 @@ const CoordinatesContainerLongStyled = styled.div`
 
 const TextStyled = styled.p`
   font-size: 12px;
+`
+
+const SubmitButtonStyled = styled.span`
+  display: flex;
+  justify-content: center;
 `
