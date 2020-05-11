@@ -71,15 +71,24 @@ export default function CreateProfilePage() {
 
         <label htmlFor="gender">Geschlecht deines Hundes*:</label>
 
-        <InputStyled
+        <SelectStyled
           id="gender"
           name="gender"
-          type="text"
           value={user.gender}
           onChange={handleChange}
-          placeholder="z.B. weiblich"
           required
-        />
+        >
+          <option value="" selected disabled hidden>
+            Wähle das Geschlecht aus
+          </option>
+          <option name="gender" value="Weiblich">
+            Weiblich
+          </option>
+          <option name="gender" value="Männlich">
+            Männlich
+          </option>
+        </SelectStyled>
+
         <label htmlFor="breed">Hunderasse*:</label>
         <InputStyled
           id="breed"
@@ -164,6 +173,22 @@ const InputStyled = styled.input`
   background-color: #d8f7fc;
   color: #353b40;
 `
+
+const SelectStyled = styled.select`
+  height: 32px;
+  width: 360px;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 12px 0 12px 0;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #d8f7fc;
+  color: #353b40;
+`
+
 const LongInputStyled = styled.textarea`
   height: 80px;
   width: 360px;
