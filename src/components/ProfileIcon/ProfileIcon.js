@@ -5,7 +5,12 @@ import profilesicon from '../../img/profiles-icon.png'
 
 export default function ProfileIcon() {
   return (
-    <LinkStyled activeClassName="selected" exact to="/profiles">
+    <LinkStyled
+      activeClassName="selected"
+      exact
+      to="/profiles"
+      data-cy="profile_icon"
+    >
       <img src={profilesicon} alt="" />
       <br />
     </LinkStyled>
