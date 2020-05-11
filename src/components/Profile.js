@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
 import styled from 'styled-components/macro'
-import defaultprofilepicture from '../../img/default-profile-picture.png'
+import defaultprofilepicture from '../img/default-profile-picture.png'
 
 Profile.propTypes = {
   name: PropTypes.string,
@@ -31,13 +31,13 @@ export default function Profile({
       <ProfileStyled onClick={toggle}>
         <img src={defaultprofilepicture} alt="sitting bulldog puppy" />
         <ProfileMainStyled>
-          <ProfileTitleStyled>
+          <ProfileTitleStyled data-cy="profile_name">
             {name}
             <br />
           </ProfileTitleStyled>
           {mail}
           <br />
-          {plz} {city}
+          <span data-cy="profile_plz">{plz}</span> {city}
           <br />
           Mein Hund ist: {gender}
           <br />

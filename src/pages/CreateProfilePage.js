@@ -22,7 +22,7 @@ export default function CreateProfilePage() {
   return (
     <main>
       <Headline>Profil erstellen</Headline>
-      <FormStyled onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit} data-cy="create_profile">
         <label htmlFor="name">Name*:</label>
 
         <InputStyled
@@ -118,7 +118,7 @@ export default function CreateProfilePage() {
           </>
         )}
         <SubmitButtonStyled>
-          <SubmitButton>Los geht's!</SubmitButton>
+          <SubmitButton data-cy="create_button">Los geht's!</SubmitButton>
         </SubmitButtonStyled>
       </FormStyled>
       <TextStyled>*Pflichtfelder</TextStyled>

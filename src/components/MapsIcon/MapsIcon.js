@@ -5,7 +5,7 @@ import mapsicon from '../../img/maps-icon.png'
 
 export default function MapsIcon() {
   return (
-    <LinkStyled activeClassName="selected" exact to="/maps">
+    <LinkStyled activeClassName="selected" exact to="/maps" data-cy="maps_icon">
       <img src={mapsicon} alt="" />
       <br />
     </LinkStyled>
