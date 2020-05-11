@@ -16,12 +16,6 @@ test('renders Headline', () => {
 
 test('renders Headline', () => {
   const container = document.createElement('div')
-  ReactDOM.render(<Headline>Favoriten von Bella</Headline>, container)
-  expect(container.textContent).toBe('Favoriten von Bella')
-})
-
-test('renders Headline', () => {
-  const container = document.createElement('div')
-  ReactDOM.render(<Headline>Lieblingsplätze von Bella</Headline>, container)
-  expect(container.textContent).toBe('Lieblingsplätze von Bella')
+  ReactDOM.render(<Headline>Hundeplätze</Headline>, container)
+  expect(container.textContent).toBe('Hundeplätze')
 })
