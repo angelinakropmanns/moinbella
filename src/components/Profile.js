@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
 import styled from 'styled-components/macro'
-import defaultprofilepicture from '../img/default-profile-picture.png'
 
 Profile.propTypes = {
   name: PropTypes.string,
