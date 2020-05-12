@@ -24,12 +24,13 @@ export default function Profile({
   breed,
   about,
   search,
+  image,
 }) {
   const { on, toggle } = useToggle(false)
   return (
     <>
       <ProfileStyled onClick={toggle}>
-        <img src={defaultprofilepicture} alt="sitting bulldog puppy" />
+        <img src={image} alt="" />
         <ProfileMainStyled>
           <ProfileTitleStyled data-cy="profile_name">
             {name}

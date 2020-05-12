@@ -35,6 +35,7 @@ export default function ProfilePage() {
           .map((profile) => (
             <Profile
               key={profile.id}
+              image={profile.image}
               name={profile.name}
               mail={profile.mail}
               plz={profile.plz}
