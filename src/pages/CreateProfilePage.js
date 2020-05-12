@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import { useToggle } from 'react-hooks-lib'
 import { db } from '../Firebase'
+import { storage } from '../Firebase'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
+import ImageUpload from '../components/ImageUpload'
 import SubmitButton from '../components/SubmitButton/SubmitButton'
 
 export default function CreateProfilePage() {
+  const [previewImage, setPreviewImage] = useState({
+    imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/moinbella-f6a5b.appspot.com/o/images%2Fdefault-profile-picture.png?alt=media&token=9424300e-79f8-440c-95b7-0f3b315d8962',
+  })
   const [user, setUser] = useState({
     name: '',
     mail: '',
@@ -23,6 +29,11 @@ export default function CreateProfilePage() {
     <main>
       <Headline>Profil erstellen</Headline>
       <FormStyled onSubmit={handleSubmit} data-cy="create_profile">
+        <p>Lade ein Profilbild hoch:</p>
+        <ImageUpload
+          updateImage={handleImageUpload}
+          previewImage={previewImage}
+        />
         <label htmlFor="name">Name*:</label>
 
         <InputStyled
@@ -134,9 +145,43 @@ export default function CreateProfilePage() {
     </main>
   )
 
+  function handleChange(event) {
+    setUser({ ...user, [event.target.name]: event.target.value })
+  }
+  function handleImageUpload(event) {
+    const image = event.target.files[0]
+    const uploadTask = storage.ref(`images/${image.name}`).put(image)
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {},
+      (error) => {
+        alert('An error occurred, please try again.')
+      },
+      () => {
+        storage
+          .ref('images')
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            setPreviewImage({ imageUrl: url })
+          })
+      }
+    )
+  }
   function handleSubmit(event) {
     event.preventDefault()
-    db.collection('users').add(user)
+    let newUser = {
+      image: previewImage.imageUrl,
+      name: user.name,
+      mail: user.mail,
+      plz: user.plz,
+      city: user.city,
+      gender: user.gender,
+      breed: user.breed,
+      about: user.about,
+      search: user.search,
+    }
+    db.collection('users').add(newUser)
     setUser({
       name: '',
       mail: '',
@@ -147,9 +192,7 @@ export default function CreateProfilePage() {
       about: '',
       search: '',
     })
-  }
-  function handleChange(event) {
-    setUser({ ...user, [event.target.name]: event.target.value })
+    setPreviewImage('')
   }
 }
 
@@ -157,6 +200,10 @@ const FormStyled = styled.form`
   text-align: left;
   width: 360px;
   margin: 0 auto 0 auto;
+  p {
+    margin-top: 32px;
+    line-height: 0;
+  }
 `
 
 const InputStyled = styled.input`
