@@ -1,11 +1,11 @@
-const testPetName = "Hannah" + Math.floor(Math.random() * Math.floor(10));
+const testUserName = 'Hannah' + Math.floor(Math.random() * Math.floor(10))
 
 describe('after submit a new profile is created and form is cleared', () => {
   it('should form is cleared after submit', () => {
     cy.visit('/create')
 
     cy.get('[data-cy=create_profile]')
-    cy.get('input[name="name"]').type(testPetName)
+    cy.get('input[name="name"]').type(testUserName)
     cy.get('input[name="mail"]').type('test@test.com')
     cy.get('input[name="plz"]').type('22222')
     cy.get('input[name="city"]').type('Hamburg')
@@ -22,6 +22,6 @@ describe('after submit a new profile is created and form is cleared', () => {
   it('a new profile is added', () => {
     cy.visit('/profiles')
 
-    cy.contains(testPetName).should('exist')
+    cy.contains(testUserName).should('exist')
   })
 })

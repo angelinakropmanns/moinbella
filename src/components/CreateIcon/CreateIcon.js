@@ -18,4 +18,7 @@ const LinkStyled = styled(NavLink)`
     height: 40px;
     width: auto;
   }
+  &.selected {
+    filter: invert(50%);
+  }
 `

@@ -77,8 +77,8 @@ const ProfileStyled = styled.section`
     margin: 0 0 4px 0;
   }
   img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: auto;
   }
   .about {
     grid-column: 1/3;

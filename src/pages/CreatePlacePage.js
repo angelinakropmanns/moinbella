@@ -121,6 +121,14 @@ const FormStyled = styled.form`
   text-align: left;
   width: 360px;
   margin: 20px auto 0 auto;
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 `
 
 const InputStyled = styled.input`
