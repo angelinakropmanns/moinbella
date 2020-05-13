@@ -4,7 +4,7 @@ export default createGlobalStyle`
  
 * {
    box-sizing: border-box;
-   font-family: 'Raleway' sans-serif;
+   font-family: Malayalam Sangam MN;
 }
  
 #root {
@@ -28,7 +28,6 @@ body {
        color: #414756;
        background-color: #AED6DC;
        margin: 0;
-       font-family: Malayalam Sangam MN;
        height: 100vh;
        text-align: center;
        align-items: center;
