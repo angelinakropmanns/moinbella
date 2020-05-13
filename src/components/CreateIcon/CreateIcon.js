@@ -5,7 +5,12 @@ import createicon from '../../img/create-icon.png'
 
 export default function CreateIcon() {
   return (
-    <LinkStyled activeClassName="selected" exact to="/create">
+    <LinkStyled
+      activeClassName="selected"
+      exact
+      to="/create"
+      data-cy="create_icon"
+    >
       <img src={createicon} alt="" />
       <br />
     </LinkStyled>
