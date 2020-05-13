@@ -37,6 +37,7 @@ footer {
    grid-row: 3/4;
    font-size: 14px;
    position: bottom;
+   height: 48px;
    z-index: 1;
 }
 `

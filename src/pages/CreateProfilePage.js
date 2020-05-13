@@ -193,6 +193,9 @@ export default function CreateProfilePage() {
       search: '',
     })
     setPreviewImage('')
+    alert(
+      'Dein Profil wurde erfolgreich angelegt! Gehe zur Profilseite, um dein Profil zu sehen und neue Hundekontakte zu knüpfen!'
+    )
   }
 }
 

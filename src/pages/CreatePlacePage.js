@@ -18,7 +18,7 @@ export default function CreatePlacePage() {
   return (
     <main>
       <Headline>Hundeplatz hinzufügen</Headline>
-      <FormStyled onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit} data-cy="create_place">
         <label htmlFor="name">Name des Hundeplatzes*:</label>
         <InputStyled
           id="name"
@@ -88,7 +88,7 @@ export default function CreatePlacePage() {
           type="text"
           value={place.public_transport}
           onChange={handleChange}
-          placeholder="Bitte gib an, mit welchen öffentlichen Verkehrsmitteln der Hundeplatz erreichbar ist"
+          placeholder="Wie ist der Platz erreichbar?"
         />
         <SubmitButtonStyled>
           <SubmitButton>Eintragen</SubmitButton>
@@ -110,6 +110,7 @@ export default function CreatePlacePage() {
       size: '',
       public_transport: '',
     })
+    alert('Der Hundeplatz wurde erfolgreich angelegt!')
   }
   function handleChange(event) {
     setPlace({ ...place, [event.target.name]: event.target.value })
