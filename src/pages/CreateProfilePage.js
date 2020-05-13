@@ -44,6 +44,7 @@ export default function CreateProfilePage() {
           onChange={handleChange}
           placeholder="Dein Name"
           required
+          autoFocus
         />
         <label htmlFor="mail">E-Mail*:</label>
 

@@ -28,6 +28,7 @@ export default function CreatePlacePage() {
           onChange={handleChange}
           placeholder="Der Name des Hundeplatzes"
           required
+          autoFocus
         />
         <label htmlFor="safety">Sicherheitsvorkehrungen*:</label>
         <InputStyled
