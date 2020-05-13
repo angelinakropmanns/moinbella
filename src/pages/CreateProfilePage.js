@@ -62,7 +62,7 @@ export default function CreateProfilePage() {
         <InputStyled
           id="plz"
           name="plz"
-          type="number"
+          type="text"
           value={user.plz}
           onChange={handleChange}
           placeholder="z.B. 20535"
@@ -207,14 +207,6 @@ const FormStyled = styled.form`
   p {
     margin-top: 32px;
     line-height: 0;
-  }
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type='number'] {
-    -moz-appearance: textfield;
   }
 `
 

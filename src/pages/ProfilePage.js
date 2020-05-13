@@ -27,7 +27,11 @@ export default function ProfilePage() {
       <Filter setSearchResult={setSearchResult} />
       <p>
         {user
-          .filter((profile) => profile.name.includes(searchResult))
+          .filter(
+            (profile) =>
+              profile.name.includes(searchResult) ||
+              profile.plz.includes(searchResult)
+          )
           .map((profile) => (
             <Profile
               key={profile.id}

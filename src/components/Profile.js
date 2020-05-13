@@ -6,7 +6,7 @@ import styled from 'styled-components/macro'
 Profile.propTypes = {
   name: PropTypes.string,
   mail: PropTypes.string,
-  plz: PropTypes.number,
+  plz: PropTypes.string,
   city: PropTypes.string,
   gender: PropTypes.string,
   breed: PropTypes.string,
