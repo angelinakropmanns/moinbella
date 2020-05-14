@@ -67,6 +67,8 @@ export default function CreateProfilePage() {
           onChange={handleChange}
           placeholder="z.B. 20535"
           required
+          minLength="5"
+          maxLength="5"
         />
 
         <label htmlFor="city">Ort*:</label>
