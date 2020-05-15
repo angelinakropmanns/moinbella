@@ -37,8 +37,11 @@ export default function ImageUpload({ updateImage, previewImage }) {
 }
 
 const ImageStyled = styled.div`
+  display: flex;
+  justify-content: center;
   height: 150px;
   width: auto;
+  margin-top: 20px;
   img {
     height: 100%;
     width: auto;
@@ -49,8 +52,8 @@ const ImageStyled = styled.div`
 
 const UploadStyled = styled.section`
   display: flex;
-  align-items: center;
-  margin: 4px 0 16px 0;
+  justify-content: center;
+  margin: 4px 0 16px 4px;
   .file-upload {
     opacity: 0;
     position: absolute;

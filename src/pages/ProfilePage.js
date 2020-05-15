@@ -21,31 +21,35 @@ export default function ProfilePage() {
     }
   }, [])
 
+  const filteredData = user.filter((profile) =>
+    profile.plz.includes(searchResult)
+  )
+
   return (
     <main>
       <Headline>Eure neuen Freunde</Headline>
       <Filter setSearchResult={setSearchResult} />
       <p>
-        {user
-          .filter(
-            (profile) =>
-              profile.name.includes(searchResult) ||
-              profile.plz.includes(searchResult)
-          )
-          .map((profile) => (
-            <Profile
-              key={profile.id}
-              image={profile.image}
-              name={profile.name}
-              mail={profile.mail}
-              plz={profile.plz}
-              city={profile.city}
-              gender={profile.gender}
-              breed={profile.breed}
-              about={profile.about}
-              search={profile.search}
-            />
-          ))}
+        {filteredData.length === 0 ? (
+          <p>Es konnten leider keine passenden Profile gefunden werden.</p>
+        ) : (
+          <>
+            {filteredData.map((profile) => (
+              <Profile
+                key={profile.id}
+                image={profile.image}
+                name={profile.name}
+                mail={profile.mail}
+                plz={profile.plz}
+                city={profile.city}
+                gender={profile.gender}
+                breed={profile.breed}
+                about={profile.about}
+                search={profile.search}
+              />
+            ))}
+          </>
+        )}
       </p>
     </main>
   )

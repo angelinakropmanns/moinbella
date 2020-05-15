@@ -29,7 +29,6 @@ export default function CreateProfilePage() {
     <main>
       <Headline>Profil erstellen</Headline>
       <FormStyled onSubmit={handleSubmit} data-cy="create_profile">
-        <p>Lade ein Profilbild hoch:</p>
         <ImageUpload
           updateImage={handleImageUpload}
           previewImage={previewImage}
@@ -195,7 +194,10 @@ export default function CreateProfilePage() {
       about: '',
       search: '',
     })
-    setPreviewImage('')
+    setPreviewImage({
+      imageUrl:
+        'https://firebasestorage.googleapis.com/v0/b/moinbella-f6a5b.appspot.com/o/images%2Fdefault-profile-picture.png?alt=media&token=9424300e-79f8-440c-95b7-0f3b315d8962',
+    })
     alert(
       'Dein Profil wurde erfolgreich angelegt! Gehe zur Profilseite, um dein Profil zu sehen und neue Hundekontakte zu knüpfen!'
     )
@@ -213,7 +215,7 @@ const FormStyled = styled.form`
 `
 
 const InputStyled = styled.input`
-  height: 32px;
+  height: 36px;
   width: 360px;
   border: 0;
   border-radius: 2px;

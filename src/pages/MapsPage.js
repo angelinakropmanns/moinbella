@@ -94,7 +94,7 @@ export default function MapsPage() {
 const AddButtonStyled = styled.span`
   display: flex;
   justify-content: flex-end;
-  margin: 0 0 4px 0;
+  margin: 0 4px 4px 0;
 `
 
 const MapStyled = styled.section`
