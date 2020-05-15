@@ -94,7 +94,7 @@ const ProfileStyled = styled.section`
   }
 `
 
-const ProfileTitleStyled = styled.span`
+const ProfileTitleStyled = styled.p`
   font-weight: bold;
   font-size: 20px;
 `
