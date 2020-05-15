@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
-import StartPage from './pages/StartPage'
 import Header from './components/Header'
 import ProfilePage from './pages/ProfilePage'
 import MapsPage from './pages/MapsPage'
@@ -14,9 +13,6 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <StartPage />
-        </Route>
-        <Route path="/profiles">
           <Header />
           <ProfilePage />
           <Navigation />
@@ -26,7 +22,7 @@ function App() {
           <MapsPage />
           <Navigation />
         </Route>
-        <Route path="/create">
+        <Route path="/create-profile">
           <Header />
           <CreateProfilePage />
           <Navigation />

@@ -34,20 +34,23 @@ export default function ProfilePage() {
           <p>Es konnten leider keine passenden Profile gefunden werden.</p>
         ) : (
           <>
-            {filteredData.map((profile) => (
-              <Profile
-                key={profile.id}
-                image={profile.image}
-                name={profile.name}
-                mail={profile.mail}
-                plz={profile.plz}
-                city={profile.city}
-                gender={profile.gender}
-                breed={profile.breed}
-                about={profile.about}
-                search={profile.search}
-              />
-            ))}
+            {filteredData
+              .slice()
+              .sort((profileA, profileB) => profileA.name > profileB.name)
+              .map((profile) => (
+                <Profile
+                  key={profile.id}
+                  image={profile.image}
+                  name={profile.name}
+                  mail={profile.mail}
+                  plz={profile.plz}
+                  city={profile.city}
+                  gender={profile.gender}
+                  breed={profile.breed}
+                  about={profile.about}
+                  search={profile.search}
+                />
+              ))}
           </>
         )}
       </p>

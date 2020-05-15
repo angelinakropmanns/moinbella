@@ -8,7 +8,7 @@ export default function CreateIcon() {
     <LinkStyled
       activeClassName="selected"
       exact
-      to="/create"
+      to="/create-profile"
       data-cy="create_icon"
     >
       <img src={createicon} alt="" />
