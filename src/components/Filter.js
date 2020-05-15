@@ -30,10 +30,10 @@ export default function Filter({ setSearchResult }) {
 
 const FilterStyled = styled.form`
   display: flex;
-  justify-content: right;
+  justify-content: left;
   margin: 16px 4px 0 4px;
   .textfield {
-    width: 164px;
+    width: 200px;
     height: 28px;
     color: #353b40;
     font-size: 12px;

@@ -27,7 +27,7 @@ export default function Profile({
 }) {
   const { on, toggle } = useToggle(false)
   return (
-    <>
+    <ProfileWrapper>
       <ProfileStyled onClick={toggle}>
         <img src={image} alt="" />
         <ProfileMainStyled>
@@ -59,17 +59,22 @@ export default function Profile({
           </>
         )}
       </ProfileStyled>
-    </>
+    </ProfileWrapper>
   )
 }
 
+const ProfileWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+`
 const ProfileStyled = styled.section`
   display: grid;
   grid-template-columns: 30% 70%;
   background: #c1e1e6;
+  width: 98%;
   text-align: left;
   line-height: 1.5;
-  margin: 12px 4px 32px 4px;
+  margin: 12px 0 32px 0;
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);

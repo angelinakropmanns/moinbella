@@ -120,8 +120,7 @@ export default function CreatePlacePage() {
 
 const FormStyled = styled.form`
   text-align: left;
-  width: 360px;
-  margin: 20px auto 0 auto;
+  margin-top: 20px;
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -130,52 +129,56 @@ const FormStyled = styled.form`
   input[type='number'] {
     -moz-appearance: textfield;
   }
+  label {
+    margin-left: 4px;
+  }
 `
 
 const InputStyled = styled.input`
-  height: 32px;
-  width: 360px;
+  height: 36px;
+  width: 98%;
   border: 0;
   border-radius: 2px;
   padding: 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 0;
+  margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
 `
 const CoordinatesInputLatStyled = styled.input`
-  height: 32px;
-  width: 168px;
+  height: 36px;
+  width: 96%;
   border: 0;
   border-radius: 2px;
   padding: 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 0;
+  margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
 `
 const CoordinatesInputLongStyled = styled.input`
-  height: 32px;
-  width: 168px;
+  height: 36px;
+  width: 96%;
   border: 0;
   border-radius: 2px;
   padding: 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 24px;
+  margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
 `
 
 const CoordinatesContainerLatStyled = styled.div`
+  width: 50%;
   display: inline-block;
   label {
     display: block;
@@ -183,10 +186,10 @@ const CoordinatesContainerLatStyled = styled.div`
 `
 
 const CoordinatesContainerLongStyled = styled.div`
+  width: 50%;
   display: inline-block;
   label {
     display: block;
-    margin-left: 24px;
   }
 `
 

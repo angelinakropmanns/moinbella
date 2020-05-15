@@ -206,39 +206,42 @@ export default function CreateProfilePage() {
 
 const FormStyled = styled.form`
   text-align: left;
-  width: 360px;
-  margin: 0 auto 0 auto;
+  margin-top: 20px;
+  width: 100%;
   p {
     margin-top: 32px;
     line-height: 0;
+  }
+  label {
+    margin-left: 4px;
   }
 `
 
 const InputStyled = styled.input`
   height: 36px;
-  width: 360px;
+  width: 98%;
   border: 0;
   border-radius: 2px;
   padding: 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 0;
+  margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
 `
 
 const SelectStyled = styled.select`
-  height: 32px;
-  width: 360px;
+  height: 36px;
+  width: 98%;
   border: 0;
   border-radius: 2px;
   padding: 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 0;
+  margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #d8f7fc;
   color: #353b40;
@@ -246,7 +249,7 @@ const SelectStyled = styled.select`
 
 const LongInputStyled = styled.textarea`
   height: 80px;
-  width: 360px;
+  width: 98%;
   border: 0;
   border-radius: 2px;
   padding-top: 12px;
@@ -254,7 +257,7 @@ const LongInputStyled = styled.textarea`
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
-  margin: 12px 0 12px 0;
+  margin: 12px auto 12px 4px;
   background-color: #d8f7fc;
   color: #353b40;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
