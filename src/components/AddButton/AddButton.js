@@ -18,4 +18,5 @@ const ButtonStyled = styled.button`
   background: #c1e1e6;
   border-radius: 8px;
   border: 1px solid #414756;
+  box-shadow: 0px 0px 4px 0.5px rgba(0, 0, 0, 0.5);
 `
