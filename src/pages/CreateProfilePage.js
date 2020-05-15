@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useToggle } from 'react-hooks-lib'
 import { db } from '../Firebase'
 import { storage } from '../Firebase'
+import swal from 'sweetalert'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
 import ImageUpload from '../components/ImageUpload'
@@ -198,9 +199,12 @@ export default function CreateProfilePage() {
       imageUrl:
         'https://firebasestorage.googleapis.com/v0/b/moinbella-f6a5b.appspot.com/o/images%2Fdefault-profile-picture.png?alt=media&token=9424300e-79f8-440c-95b7-0f3b315d8962',
     })
-    alert(
-      'Dein Profil wurde erfolgreich angelegt! Gehe zur Profilseite, um dein Profil zu sehen und neue Hundekontakte zu knüpfen!'
-    )
+    swal({
+      title: 'Dein Profil wurde angelegt!',
+      text:
+        'Gehe zur Profilseite, um dein Profil zu sehen und neue Hundekontakte zu knüpfen!',
+      icon: 'success',
+    })
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { db } from '../Firebase'
+import swal from 'sweetalert'
 import styled from 'styled-components/macro'
 import Headline from '../components/Headline/Headline'
 import SubmitButton from '../components/SubmitButton/SubmitButton'
@@ -111,7 +112,11 @@ export default function CreatePlacePage() {
       size: '',
       public_transport: '',
     })
-    alert('Der Hundeplatz wurde erfolgreich angelegt!')
+    swal({
+      title: 'Der Hundeplatz wurde erfolgreich angelegt!',
+      text: 'Gehe zurück zur Map, um alle Hundeplätze zu sehen!',
+      icon: 'success',
+    })
   }
   function handleChange(event) {
     setPlace({ ...place, [event.target.name]: event.target.value })
