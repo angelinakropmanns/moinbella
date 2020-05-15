@@ -20,15 +20,12 @@ export default function Filter({ setSearchResult }) {
             className="textfield"
             InputProps={{ ...params.InputProps, type: 'text' }}
             placeholder="Suche nach PLZ"
-            onSelect={(event) => handleSelect(event)}
+            onSelect={(event) => setSearchResult(event.target.value)}
           />
         )}
       />
     </FilterStyled>
   )
-  function handleSelect(event) {
-    setSearchResult(event.target.value)
-  }
 }
 
 const FilterStyled = styled.form`

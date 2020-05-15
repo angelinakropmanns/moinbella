@@ -215,7 +215,7 @@ const FormStyled = styled.form`
 `
 
 const InputStyled = styled.input`
-  height: 32px;
+  height: 36px;
   width: 360px;
   border: 0;
   border-radius: 2px;
