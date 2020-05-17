@@ -56,6 +56,6 @@ const UploadStyled = styled.section`
   margin: 4px 0 16px 4px;
   .file-upload {
     opacity: 0;
-    position: absolute;
+    position: fixed;
   }
 `

@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import mapsicon from '../../img/maps-icon.png'
+import maps from '../../img/maps-icon.png'
 
 export default function MapsIcon() {
   return (
     <LinkStyled activeClassName="selected" exact to="/maps" data-cy="maps_icon">
-      <img src={mapsicon} alt="" />
+      <img src={maps} alt="maps" />
       <br />
     </LinkStyled>
   )

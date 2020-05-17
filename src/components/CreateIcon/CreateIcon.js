@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import createicon from '../../img/create-icon.png'
+import create from '../../img/create-icon.png'
 
 export default function CreateIcon() {
   return (
@@ -11,7 +11,7 @@ export default function CreateIcon() {
       to="/create-profile"
       data-cy="create_icon"
     >
-      <img src={createicon} alt="" />
+      <img src={create} alt="create" />
       <br />
     </LinkStyled>
   )

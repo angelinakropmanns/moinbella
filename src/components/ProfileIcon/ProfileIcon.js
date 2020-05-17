@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import profilesicon from '../../img/profiles-icon.png'
+import profiles from '../../img/profiles-icon.png'
 
 export default function ProfileIcon() {
   return (
     <LinkStyled activeClassName="selected" exact to="/" data-cy="profile_icon">
-      <img src={profilesicon} alt="" />
+      <img src={profiles} alt="profile" />
       <br />
     </LinkStyled>
   )

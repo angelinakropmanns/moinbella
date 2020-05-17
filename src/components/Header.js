@@ -13,7 +13,7 @@ export default function Header() {
 const HeaderStyled = styled.header`
   item-align: center;
   height: 48px;
-  margin-bottom: 20px;
+  margin: 12px 0 20px 0;
   img {
     max-height: 100%;
     width: auto;

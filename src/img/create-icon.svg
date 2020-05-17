@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="79px" viewBox="0 0 66 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>CreateIcon</title>
+    <g id="Artboard-App" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0">
+        <g id="Artboard" transform="translate(-404.000000, -409.000000)" fill="#FF0000" stroke-width="4">
+            <g id="Group-3" transform="translate(404.000000, 409.000000)">
+                <g id="Combined-Shape-2" transform="translate(0.000000, -0.000000)">
+                    <path d="M53.3936394,2.81448013 L5.73473668,61.8164053 L2.81412704,75.0654381 L8.62222895,72.4264932 L15.2623149,69.5149623 L62.9854613,10.5817844 L53.3936394,2.81448013 Z" id="Combined-Shape"></path>
+                </g>
+                <line x1="53.8164875" y1="7.53448276" x2="51.0913425" y2="19.4863599" id="Line" stroke-linecap="square" transform="translate(52.453915, 13.510421) rotate(-63.844416) translate(-52.453915, -13.510421) "></line>
+                <line x1="13.1650905" y1="57.887931" x2="10.5913425" y2="69.175815" id="Line" stroke-linecap="square" transform="translate(11.878217, 63.531873) rotate(-63.844416) translate(-11.878217, -63.531873) "></line>
+            </g>
+        </g>
+    </g>
+</svg>

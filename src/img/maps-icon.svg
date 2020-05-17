@@ -1,1 +1,26 @@
-<?xml version="1.0" ?><svg data-name="icons export" id="icons_export" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><path d="M36,62a2,2,0,0,1-1.54-.72C33.63,60.28,14,36.58,14,24a22,22,0,0,1,44,0c0,12.58-19.63,36.28-20.46,37.28A2,2,0,0,1,36,62ZM36,6A18,18,0,0,0,18,24c0,8.47,11.84,25.09,18,32.83C42.16,49.09,54,32.47,54,24A18,18,0,0,0,36,6Z"/><path d="M36,34A10,10,0,1,1,46,24,10,10,0,0,1,36,34Zm0-16a6,6,0,1,0,6,6A6,6,0,0,0,36,18Z"/><path d="M68,70H4a2,2,0,0,1-1.79-2.89l8-16A2,2,0,0,1,12,50h8a2,2,0,0,1,0,4H13.24l-6,12H64.76l-6-12H52a2,2,0,0,1,0-4h8a2,2,0,0,1,1.79,1.11l8,16A2,2,0,0,1,68,70Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="70px" viewBox="0 0 62 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard-App" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-236.000000, -475.000000)" fill-rule="evenodd">
+            <g id="Group-6" transform="translate(235.000000, 321.000000)">
+                <g id="Group-5" transform="translate(-0.000000, 0.000000)">
+                    <g id="Group-7" transform="translate(0.000000, 111.000000)">
+                        <g id="Group-8" transform="translate(-0.000000, 43.000000)">
+                            <g id="Group-4" transform="translate(12.000000, 0.000000)">
+                                <path d="M20.7594937,0 C32.2246454,0 41.5189873,9.2943419 41.5189873,20.7594937 C41.5189873,24.0292668 40.7630353,27.1224778 39.4163687,29.8738892 L39.4936709,29.8734177 L39.023352,30.6364118 C38.6542333,31.3175278 38.248125,31.9756729 37.8077212,32.608153 L20.7594937,60.2531646 L3.70773987,32.6030872 C3.27033668,31.9745189 2.86679846,31.3206201 2.49976796,30.6440337 L2.02531646,29.8734177 L2.10261863,29.8738892 C0.755952068,27.1224778 0,24.0292668 0,20.7594937 C0,9.2943419 9.2943419,0 20.7594937,0 Z M20.5063291,9.11392405 C15.3330289,9.11392405 11.1392405,13.3077125 11.1392405,18.4810127 C11.1392405,23.6543128 15.3330289,27.8481013 20.5063291,27.8481013 C25.6796293,27.8481013 29.8734177,23.6543128 29.8734177,18.4810127 C29.8734177,13.3077125 25.6796293,9.11392405 20.5063291,9.11392405 Z" id="Combined-Shape"></path>
+                            </g>
+                            <rect id="Rectangle" x="2" y="66" width="60" height="4" rx="2"></rect>
+                            <rect id="Rectangle" transform="translate(58.000000, 59.000000) rotate(-17.000000) translate(-58.000000, -59.000000) " x="56" y="48" width="4" height="22" rx="2"></rect>
+                            <rect id="Rectangle" transform="translate(6.000000, 59.000000) scale(-1, 1) rotate(-17.000000) translate(-6.000000, -59.000000) " x="4" y="48" width="4" height="22" rx="2"></rect>
+                            <rect id="Rectangle" x="46" y="48" width="11" height="4" rx="2"></rect>
+                            <rect id="Rectangle" x="7" y="48" width="11" height="4" rx="2"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
