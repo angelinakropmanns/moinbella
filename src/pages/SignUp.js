@@ -3,6 +3,12 @@ import { Link, useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { useForm } from 'react-hook-form'
 import SubmitButton from '../components/SubmitButton/SubmitButton'
+import PropTypes from 'prop-types'
+
+SignUp.propTypes = {
+  signUp: PropTypes.func.isRequired,
+  setProfile: PropTypes.func.isRequired,
+}
 
 export default function SignUp({ signUp, setProfile }) {
   const { register, handleSubmit, errors, setError } = useForm()

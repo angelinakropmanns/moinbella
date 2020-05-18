@@ -5,7 +5,6 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import ReactLeafletSearch from 'react-leaflet-search'
 import styled from 'styled-components/macro'
-import Headline from '../components/Headline/Headline'
 import AddButton from '../components/AddButton/AddButton'
 
 const dog = new Icon({
@@ -37,7 +36,6 @@ export default function MapsPage() {
 
   return (
     <main>
-      <Headline>Hundeplätze</Headline>
       <AddButtonStyled>
         <Link to="/create-place">
           <AddButton>Hundeplatz hinzufügen</AddButton>

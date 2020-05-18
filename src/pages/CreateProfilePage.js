@@ -4,7 +4,6 @@ import { db } from '../Firebase'
 import { storage } from '../Firebase'
 import swal from 'sweetalert'
 import styled from 'styled-components/macro'
-import Headline from '../components/Headline/Headline'
 import ImageUpload from '../components/ImageUpload'
 import SubmitButton from '../components/SubmitButton/SubmitButton'
 
@@ -28,7 +27,6 @@ export default function CreateProfilePage() {
 
   return (
     <main>
-      <Headline>Profil erstellen</Headline>
       <FormStyled onSubmit={handleSubmit} data-cy="create_profile">
         <ImageUpload
           updateImage={handleImageUpload}
