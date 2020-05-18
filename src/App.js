@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import AuthProvider, { AuthConsumer } from './Auth/AuthContext'
 import useServices from './Hooks/useServices'
-import Header from './components/Header'
+import UserHeader from './Auth/UserHeader'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import ProfilePage from './pages/ProfilePage'
@@ -25,13 +25,13 @@ function App() {
               <Route path="/profiles">
                 {user.id ? (
                   <>
-                    <Header />
+                    <UserHeader />
                     <ProfilePage />
                     <Navigation />
                   </>
                 ) : (
                   <>
-                    <Header />
+                    <UserHeader />
                     <SignIn
                       profile={profile}
                       setProfile={setProfile}
@@ -44,13 +44,13 @@ function App() {
               <Route path="/maps">
                 {user.id ? (
                   <>
-                    <Header />
+                    <UserHeader />
                     <MapsPage />
                     <Navigation />
                   </>
                 ) : (
                   <>
-                    <Header />
+                    <UserHeader />
                     <SignIn
                       profile={profile}
                       setProfile={setProfile}
@@ -63,13 +63,13 @@ function App() {
               <Route path="/create-profile">
                 {user.id ? (
                   <>
-                    <Header />
+                    <UserHeader />
                     <CreateProfilePage />
                     <Navigation />
                   </>
                 ) : (
                   <>
-                    <Header />
+                    <UserHeader />
                     <SignIn
                       profile={profile}
                       setProfile={setProfile}
@@ -82,13 +82,13 @@ function App() {
               <Route path="/create-place">
                 {user.id ? (
                   <>
-                    <Header />
+                    <UserHeader />
                     <CreatePlacePage />
                     <Navigation />
                   </>
                 ) : (
                   <>
-                    <Header />
+                    <UserHeader />
                     <SignIn
                       profile={profile}
                       setProfile={setProfile}
@@ -99,7 +99,7 @@ function App() {
                 )}
               </Route>
               <Route exact path="/signup">
-                <Header />
+                <UserHeader />
                 <SignUp signUp={signUp} setProfile={setProfile} />
               </Route>
             </Switch>

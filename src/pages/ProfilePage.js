@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { db } from '../Firebase'
-import Headline from '../components/Headline/Headline'
 import Profile from '../components/Profile'
 import Filter from '../components/Filter'
 
@@ -27,7 +26,6 @@ export default function ProfilePage() {
 
   return (
     <main>
-      <Headline>Eure neuen Freunde</Headline>
       <Filter setSearchResult={setSearchResult} />
       <p>
         {filteredData.length === 0 ? (

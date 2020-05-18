@@ -9,39 +9,43 @@ export default function SignIn({ login, resetPassword, profile, setProfile }) {
   const { register, handleSubmit, errors, setError } = useForm()
   return (
     <main>
-      <FormStyled onSubmit={handleSubmit(onSubmit)}>
-        <InputStyled
-          ref={register}
-          type="email"
-          name="email"
-          placeholder="Trage deine Mail-Adresse ein"
-          required
-        />
-        {errors.email && errors.email.type === 'notFound' && (
-          <p>{errors.email.message}</p>
-        )}
-        <InputStyled
-          ref={register}
-          type="password"
-          name="password"
-          placeholder="Gib dein Passwort ein"
-          required
-        />
-        {errors.password && errors.password.type === 'reset' && (
-          <p>
-            {errors.password.message}
-            <div onClick={handleReset}> setze dein Passwort zurück</div>
-          </p>
-        )}
-        <SubmitButtonStyled>
-          <SubmitButton>Login</SubmitButton>
-        </SubmitButtonStyled>
-      </FormStyled>
-      <TextStyled>*Pflichtfelder</TextStyled>
-      <p>Du hast noch keinen Account?</p>
-      <Link to="/signup">
-        <p>Klicke hier um dich zu registrieren</p>
-      </Link>
+      <WrapperStyled>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <section className="email">
+            <label htmlFor="email">E-Mail:</label>
+            <input
+              ref={register({ required: true })}
+              type="email"
+              name="email"
+              placeholder="Trage deine Mail-Adresse ein"
+            />
+            {errors.email && errors.email.type === 'notFound' && (
+              <>
+                <span>{errors.email.message}</span>
+                <br />
+              </>
+            )}
+          </section>
+          <label htmlFor="password">Passwort:</label>
+          <input
+            ref={register({ required: true })}
+            type="password"
+            name="password"
+            placeholder="Gib dein Passwort ein"
+          />
+          {errors.password && errors.password.type === 'reset' && (
+            <span>
+              {errors.password.message}
+              <span onClick={handleReset}> setze dein Passwort zurück.</span>
+            </span>
+          )}
+          <SubmitButtonStyled>
+            <SubmitButton>Login</SubmitButton>
+          </SubmitButtonStyled>
+        </form>
+      </WrapperStyled>
+      <TextStyled>Du hast noch keinen Account?</TextStyled>
+      <Link to="/signup">Klicke hier um dich zu registrieren</Link>
     </main>
   )
 
@@ -75,39 +79,37 @@ export default function SignIn({ login, resetPassword, profile, setProfile }) {
   }
 }
 
-const FormStyled = styled.form`
-  text-align: left;
-  margin-top: 20px;
+const WrapperStyled = styled.section`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  p {
-    margin-top: 32px;
-    line-height: 0;
+  margin: 80px 4px 20px 4px;
+  text-align: left;
+  input {
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: 2px;
+    padding: 4px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: #d8f7fc;
+    color: #353b40;
   }
-  label {
-    margin-left: 4px;
-  }
-`
 
-const InputStyled = styled.input`
-  height: 36px;
-  width: 98%;
-  border: 0;
-  border-radius: 2px;
-  padding: 4px;
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: 100;
-  margin: 12px auto 12px 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  .email {
+    margin-bottom: 28px;
+  }
 `
 
 const SubmitButtonStyled = styled.span`
   display: flex;
   justify-content: center;
+  margin-top: 24px;
 `
 
 const TextStyled = styled.p`
-  font-size: 12px;
+  margin-top: 80px;
 `

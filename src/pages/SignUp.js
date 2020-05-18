@@ -10,16 +10,19 @@ export default function SignUp({ signUp, setProfile }) {
 
   function onSubmit(data) {
     setProfile(data)
-    signUp(data).then((res) => {
-      if (res.code === 'auth/email-already-in-use') {
-        return setError(
-          'email',
-          'inUse',
-          'Die eingegebene Mail-Adresse wird bereits genutzt.'
-        )
-      }
-      setTimeout(history.pushState('/'), 3000)
-    })
+    console.log('submit', data)
+    signUp(data)
+      .then((res) => {
+        if (res.code === 'auth/email-already-in-use') {
+          return setError(
+            'email',
+            'inUse',
+            'Die eingegebene Mail-Adresse wird bereits genutzt.'
+          )
+        }
+        setTimeout(history.pushState('/'), 3000)
+      })
+      .catch((error) => console.log(error))
   }
   return (
     <main>
