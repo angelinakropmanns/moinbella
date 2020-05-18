@@ -95,12 +95,8 @@ export default function CreateProfilePage() {
           <option value="" selected disabled hidden>
             Wähle das Geschlecht aus
           </option>
-          <option name="gender" value="Weiblich">
-            Weiblich
-          </option>
-          <option name="gender" value="Männlich">
-            Männlich
-          </option>
+          <option value="Weiblich">Weiblich</option>
+          <option value="Männlich">Männlich</option>
         </SelectStyled>
 
         <label htmlFor="breed">Hunderasse*:</label>
