@@ -13,7 +13,7 @@ export default function CreateProfilePage() {
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/moinbella-f6a5b.appspot.com/o/images%2Fdefault-profile-picture.png?alt=media&token=9424300e-79f8-440c-95b7-0f3b315d8962',
   })
-  const [user, setUser] = useState({
+  const [userData, setUserData] = useState({
     name: '',
     mail: '',
     plz: '',
@@ -40,7 +40,7 @@ export default function CreateProfilePage() {
           id="name"
           name="name"
           type="text"
-          value={user.name}
+          value={userData.name}
           onChange={handleChange}
           placeholder="Dein Name"
           required
@@ -52,7 +52,7 @@ export default function CreateProfilePage() {
           id="mail"
           name="mail"
           type="email"
-          value={user.mail}
+          value={userData.mail}
           onChange={handleChange}
           placeholder="z.B. beispiel@beispiel.com"
           required
@@ -63,7 +63,7 @@ export default function CreateProfilePage() {
           id="plz"
           name="plz"
           type="text"
-          value={user.plz}
+          value={userData.plz}
           onChange={handleChange}
           placeholder="z.B. 20535"
           required
@@ -77,7 +77,7 @@ export default function CreateProfilePage() {
           id="city"
           name="city"
           type="text"
-          value={user.city}
+          value={userData.city}
           onChange={handleChange}
           placeholder="z.B. Hamburg"
           required
@@ -88,7 +88,7 @@ export default function CreateProfilePage() {
         <SelectStyled
           id="gender"
           name="gender"
-          value={user.gender}
+          value={userData.gender}
           onChange={handleChange}
           required
         >
@@ -108,7 +108,7 @@ export default function CreateProfilePage() {
           id="breed"
           name="breed"
           type="text"
-          value={user.breed}
+          value={userData.breed}
           onChange={handleChange}
           placeholder="z.B. Bulldogge"
           required
@@ -125,7 +125,7 @@ export default function CreateProfilePage() {
               id="about"
               name="about"
               type="text"
-              value={user.about}
+              value={userData.about}
               onChange={handleChange}
               placeholder="Z.B. der Name deines Hundes, was ihr gerne macht..."
             />
@@ -134,7 +134,7 @@ export default function CreateProfilePage() {
               id="search"
               name="search"
               type="text"
-              value={user.search}
+              value={userData.search}
               onChange={handleChange}
               placeholder="Wonach ihr sucht, z.B. regelmäßige Treffen..."
             />
@@ -149,7 +149,7 @@ export default function CreateProfilePage() {
   )
 
   function handleChange(event) {
-    setUser({ ...user, [event.target.name]: event.target.value })
+    setUserData({ ...userData, [event.target.name]: event.target.value })
   }
   function handleImageUpload(event) {
     const image = event.target.files[0]
@@ -175,17 +175,17 @@ export default function CreateProfilePage() {
     event.preventDefault()
     let newUser = {
       image: previewImage.imageUrl,
-      name: user.name,
-      mail: user.mail,
-      plz: user.plz,
-      city: user.city,
-      gender: user.gender,
-      breed: user.breed,
-      about: user.about,
-      search: user.search,
+      name: userData.name,
+      mail: userData.mail,
+      plz: userData.plz,
+      city: userData.city,
+      gender: userData.gender,
+      breed: userData.breed,
+      about: userData.about,
+      search: userData.search,
     }
     db.collection('users').add(newUser)
-    setUser({
+    setUserData({
       name: '',
       mail: '',
       plz: '',
