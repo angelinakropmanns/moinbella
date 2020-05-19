@@ -5,7 +5,7 @@ import maps from '../../img/maps-icon.png'
 
 export default function MapsIcon() {
   return (
-    <LinkStyled activeClassName="selected" exact to="/maps" data-cy="maps_icon">
+    <LinkStyled activeClassName="selected" to="/maps" data-cy="maps_icon">
       <img src={maps} alt="maps" />
       <br />
     </LinkStyled>

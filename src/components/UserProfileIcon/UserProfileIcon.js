@@ -1,17 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import create from '../../img/create-icon.png'
+import userprofile from '../../img/userprofile-icon.png'
 
-export default function CreateIcon() {
+export default function UserProfileIcon() {
   return (
     <LinkStyled
       activeClassName="selected"
-      exact
-      to="/create-profile"
-      data-cy="create_icon"
+      to="/user-profile"
+      data-cy="userprofile_icon"
     >
-      <img src={create} alt="create" />
+      <img src={userprofile} alt="user profil" />
       <br />
     </LinkStyled>
   )

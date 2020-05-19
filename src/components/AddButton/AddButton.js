@@ -7,7 +7,7 @@ AddButton.propTypes = {
 }
 
 export default function AddButton({ children }) {
-  return <ButtonStyled type="submit">{children}</ButtonStyled>
+  return <ButtonStyled>{children}</ButtonStyled>
 }
 
 const ButtonStyled = styled.button`

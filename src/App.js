@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import AuthProvider, { AuthConsumer } from './Auth/AuthContext'
-import useServices from './Hooks/useServices'
 import UserHeader from './Auth/UserHeader'
 import Header from './components/Header'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import ProfilePage from './pages/ProfilePage'
+import UserProfile from './pages/UserProfile'
 import MapsPage from './pages/MapsPage'
 import Navigation from './components/Navigation/Navigation'
 import CreateProfilePage from './pages/CreateProfilePage'
 import CreatePlacePage from './pages/CreatePlacePage'
 
 function App() {
-  const { signUp, login, resetPassword, profile, setProfile } = useServices()
-
+  const [profile, setProfile] = useState({
+    email: '',
+    password: '',
+    id: '',
+  })
   return (
     <Router>
       <AuthProvider setProfile={setProfile}>
@@ -32,13 +35,20 @@ function App() {
                   </>
                 ) : (
                   <>
+                    <SignIn profile={profile} setProfile={setProfile} />
+                  </>
+                )}
+              </Route>
+              <Route path="/user-profile">
+                {user.id ? (
+                  <>
                     <UserHeader />
-                    <SignIn
-                      profile={profile}
-                      setProfile={setProfile}
-                      login={login}
-                      resetPassword={resetPassword}
-                    />
+                    <UserProfile />
+                    <Navigation />
+                  </>
+                ) : (
+                  <>
+                    <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
               </Route>
@@ -51,13 +61,7 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
-                    <SignIn
-                      profile={profile}
-                      setProfile={setProfile}
-                      login={login}
-                      resetPassword={resetPassword}
-                    />
+                    <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
               </Route>
@@ -70,13 +74,7 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
-                    <SignIn
-                      profile={profile}
-                      setProfile={setProfile}
-                      login={login}
-                      resetPassword={resetPassword}
-                    />
+                    <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
               </Route>
@@ -89,19 +87,13 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
-                    <SignIn
-                      profile={profile}
-                      setProfile={setProfile}
-                      login={login}
-                      resetPassword={resetPassword}
-                    />
+                    <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
               </Route>
               <Route exact path="/signup">
                 <Header />
-                <SignUp signUp={signUp} setProfile={setProfile} />
+                <SignUp setProfile={setProfile} />
               </Route>
             </Switch>
           )}

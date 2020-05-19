@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-UploadButton.propTypes = {
+EditButton.propTypes = {
   children: PropTypes.string,
 }
 
-export default function UploadButton({ children }) {
+export default function EditButton({ children }) {
   return <ButtonStyled>{children}</ButtonStyled>
 }
 
 const ButtonStyled = styled.button`
+  font-size: 14px;
+  height: 32px;
+  width: 120px;
   color: #414756;
-  font-size: 12px;
-  height: 20px;
-  width: 80px;
   background: #ff9a8d;
   border-radius: 8px;
   border: 28px;
