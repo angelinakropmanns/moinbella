@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 export default function UserProfile() {
   const [user, setUser] = useState('')
 
-  const currentUser = localStorage.getItem('uid')
+  const activeUser = localStorage.getItem('uid')
 
   useEffect(() => {
     db.collection('users').onSnapshot((snapshot) => {
@@ -17,7 +17,7 @@ export default function UserProfile() {
     })
   }, [])
 
-  let singleUser = user && user.filter((user) => user.id === currentUser)[0]
+  let singleUser = user && user.filter((user) => user.id === activeUser)[0]
 
   return (
     <main>
