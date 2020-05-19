@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { auth } from '../Firebase'
 import styled from 'styled-components/macro'
 import { useForm } from 'react-hook-form'
 import swal from 'sweetalert'
@@ -7,13 +8,11 @@ import SubmitButton from '../components/SubmitButton/SubmitButton'
 import PropTypes from 'prop-types'
 
 SignIn.propTypes = {
-  login: PropTypes.func.isRequired,
-  resetPassword: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   setProfile: PropTypes.func.isRequired,
 }
 
-export default function SignIn({ login, resetPassword, profile, setProfile }) {
+export default function SignIn({ profile, setProfile }) {
   const { register, handleSubmit, errors, setError } = useForm()
   return (
     <main>
@@ -86,6 +85,17 @@ export default function SignIn({ login, resetPassword, profile, setProfile }) {
       icon: 'success',
     })
     resetPassword(profile)
+  }
+  async function login({ email, password }) {
+    try {
+      const res = await auth.signInWithEmailAndPassword(email, password)
+      return res
+    } catch (error) {
+      return error
+    }
+  }
+  function resetPassword({ email }) {
+    auth.sendPasswordResetEmail(email)
   }
 }
 

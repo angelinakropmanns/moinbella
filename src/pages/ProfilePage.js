@@ -20,7 +20,7 @@ export default function ProfilePage() {
     }
   }, [])
 
-  const filteredData = user.filter((profile) =>
+  let filteredData = user.filter((profile) =>
     profile.plz.includes(searchResult)
   )
 
@@ -40,7 +40,7 @@ export default function ProfilePage() {
                   key={profile.id}
                   image={profile.image}
                   name={profile.name}
-                  mail={profile.mail}
+                  mail={profile.email}
                   plz={profile.plz}
                   city={profile.city}
                   gender={profile.gender}
