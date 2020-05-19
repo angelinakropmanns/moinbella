@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import AuthProvider, { AuthConsumer } from './Auth/AuthContext'
 import useServices from './Hooks/useServices'
 import UserHeader from './Auth/UserHeader'
+import Header from './components/Header'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import ProfilePage from './pages/ProfilePage'
@@ -99,7 +100,7 @@ function App() {
                 )}
               </Route>
               <Route exact path="/signup">
-                <UserHeader />
+                <Header />
                 <SignUp signUp={signUp} setProfile={setProfile} />
               </Route>
             </Switch>

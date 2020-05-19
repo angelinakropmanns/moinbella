@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { db } from '../Firebase'
 import swal from 'sweetalert'
 import styled from 'styled-components/macro'
-import Headline from '../components/Headline/Headline'
 import SubmitButton from '../components/SubmitButton/SubmitButton'
 
 export default function CreatePlacePage() {
@@ -18,7 +17,6 @@ export default function CreatePlacePage() {
 
   return (
     <main>
-      <Headline>Hundeplatz hinzufügen</Headline>
       <FormStyled onSubmit={handleSubmit} data-cy="create_place">
         <label htmlFor="name">Name des Hundeplatzes*:</label>
         <InputStyled
@@ -136,6 +134,10 @@ const FormStyled = styled.form`
   }
   label {
     margin-left: 4px;
+  }
+  textarea:focus,
+  input:focus {
+    outline: none;
   }
 `
 

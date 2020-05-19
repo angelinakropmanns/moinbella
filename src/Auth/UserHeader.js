@@ -39,5 +39,6 @@ const HeaderStyled = styled.header`
   }
   p {
     margin-right: 8px;
+    text-decoration: underline;
   }
 `

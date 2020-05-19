@@ -92,12 +92,13 @@ export default function MapsPage() {
 const AddButtonStyled = styled.span`
   display: flex;
   justify-content: flex-end;
-  margin: 0 4px 4px 0;
+  margin: 4px 4px 4px 0;
 `
 
 const MapStyled = styled.section`
+  margin: 12px 4px 0 4px;
   .leaflet-container {
     width: 360px;
-    height: 488px;
+    height: 500px;
   }
 `

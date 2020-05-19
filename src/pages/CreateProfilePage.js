@@ -213,6 +213,10 @@ const FormStyled = styled.form`
   label {
     margin-left: 4px;
   }
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
 `
 
 const InputStyled = styled.input`

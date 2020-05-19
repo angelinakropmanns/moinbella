@@ -20,7 +20,7 @@ header {
 main {
    grid-row: 2/3;
    overflow: scroll;
-   margin: 12px auto 12px auto;
+   margin: 12px 4px 12px 4px;
    height: 100%;
 }
  

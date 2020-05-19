@@ -17,43 +17,45 @@ export default function SignIn({ login, resetPassword, profile, setProfile }) {
   const { register, handleSubmit, errors, setError } = useForm()
   return (
     <main>
-      <WrapperStyled>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <section className="email">
-            <label htmlFor="email">E-Mail:</label>
-            <input
-              ref={register({ required: true })}
-              type="email"
-              name="email"
-              placeholder="Trage deine Mail-Adresse ein"
-            />
-            {errors.email && errors.email.type === 'notFound' && (
-              <>
-                <span>{errors.email.message}</span>
-                <br />
-              </>
-            )}
-          </section>
-          <label htmlFor="password">Passwort:</label>
-          <input
-            ref={register({ required: true })}
-            type="password"
-            name="password"
-            placeholder="Gib dein Passwort ein"
-          />
-          {errors.password && errors.password.type === 'reset' && (
-            <span>
-              {errors.password.message}
-              <span onClick={handleReset}> setze dein Passwort zurück.</span>
-            </span>
-          )}
-          <SubmitButtonStyled>
-            <SubmitButton>Login</SubmitButton>
-          </SubmitButtonStyled>
-        </form>
-      </WrapperStyled>
+      <FormStyled onSubmit={handleSubmit(onSubmit)} data-cy="signin_form">
+        <label htmlFor="email">E-Mail:</label>
+        <InputStyled
+          ref={register({ required: true })}
+          type="email"
+          name="email"
+          placeholder="Trage deine Mail-Adresse ein"
+          data-cy="mail_input"
+        />
+        {errors.email && errors.email.type === 'notFound' && (
+          <>
+            <Error>{errors.email.message}</Error>
+            <br />
+          </>
+        )}
+        <label htmlFor="password">Passwort:</label>
+        <InputStyled
+          ref={register({ required: true })}
+          type="password"
+          name="password"
+          placeholder="Gib dein Passwort ein"
+          data-cy="password_input"
+        />
+        {errors.password && errors.password.type === 'reset' && (
+          <Error>
+            {errors.password.message}
+            <ResetErrorStyled onClick={handleReset}>
+              {' '}
+              setze dein Passwort zurück.
+            </ResetErrorStyled>
+          </Error>
+        )}
+        <SubmitButtonStyled>
+          <SubmitButton>Login</SubmitButton>
+        </SubmitButtonStyled>
+      </FormStyled>
+      <ResetStyled onClick={handleReset}>Neues Passwort anfordern</ResetStyled>
       <TextStyled>Du hast noch keinen Account?</TextStyled>
-      <Link to="/signup">Klicke hier um dich zu registrieren</Link>
+      <LinkStyled to="/signup">Klicke hier um dich zu registrieren</LinkStyled>
     </main>
   )
 
@@ -87,37 +89,59 @@ export default function SignIn({ login, resetPassword, profile, setProfile }) {
   }
 }
 
-const WrapperStyled = styled.section`
+const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 80px 4px 20px 4px;
+  margin: 80px 20px 20px 20px;
   text-align: left;
-  input {
-    height: 40px;
-    width: 100%;
-    border: 0;
-    border-radius: 2px;
-    padding: 4px;
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: 100;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: #d8f7fc;
-    color: #353b40;
+  label {
+    color: #414756;
   }
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+`
 
-  .email {
-    margin-bottom: 28px;
-  }
+const InputStyled = styled.input`
+  height: 40px;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+  color: #414756;
+  background: #aed6dc;
+  border: none;
+  border-bottom: 1px solid #414756;
+  margin-bottom: 28px;
 `
 
 const SubmitButtonStyled = styled.span`
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: 8px;
 `
 
 const TextStyled = styled.p`
-  margin-top: 80px;
+  margin-top: 40px;
+`
+
+const LinkStyled = styled(Link)`
+  color: #414756;
+`
+
+const Error = styled.p`
+  margin: 0 0 20px 0;
+  color: red;
+`
+const ResetStyled = styled.p`
+  text-decoration: underline;
+  font-size: 14px;
+  margin-top: 28px;
+`
+const ResetErrorStyled = styled.span`
+  text-decoration: underline;
 `
