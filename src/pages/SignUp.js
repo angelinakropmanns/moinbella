@@ -31,7 +31,7 @@ export default function SignUp({ setProfile }) {
   })
   const { on, toggle } = useToggle(false)
   return (
-    <main>
+    <SignUpPageStyled>
       <LinkWrapper>
         <LinkStyled to="/">Zum Login</LinkStyled>
         <LinkStyled to="/profiles">Zu den Profilen</LinkStyled>
@@ -166,7 +166,7 @@ export default function SignUp({ setProfile }) {
         </SubmitButtonStyled>
       </FormStyled>
       <TextStyled>*Pflichtfelder</TextStyled>
-    </main>
+    </SignUpPageStyled>
   )
 
   function handleChange(event) {
@@ -253,6 +253,13 @@ export default function SignUp({ setProfile }) {
     })
   }
 }
+
+const SignUpPageStyled = styled.section`
+  grid-row: 2/4;
+  overflow: scroll;
+  margin: 12px 4px 12px 4px;
+  height: 100%;
+`
 
 const LinkWrapper = styled.section`
   display: flex;

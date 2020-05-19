@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import CreateIcon from '../CreateIcon/CreateIcon'
+import UserProfileIcon from '../UserProfileIcon/UserProfileIcon'
 import ProfileIcon from '../ProfileIcon/ProfileIcon'
 import MapsIcon from '../MapsIcon/MapsIcon'
 
 export default function Navigation() {
   return (
     <NavigationStyled>
-      <CreateIconStyled>
-        <CreateIcon />
-      </CreateIconStyled>
+      <UserProfileIconStyled>
+        <UserProfileIcon />
+      </UserProfileIconStyled>
       <ProfileIconStyled>
         <ProfileIcon />
       </ProfileIconStyled>
@@ -28,7 +28,7 @@ const NavigationStyled = styled.footer`
   margin: 0;
 `
 
-const CreateIconStyled = styled.span`
+const UserProfileIconStyled = styled.span`
   margin-top: 4px;
 `
 

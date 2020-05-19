@@ -7,6 +7,7 @@ import Header from './components/Header'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import ProfilePage from './pages/ProfilePage'
+import UserProfile from './pages/UserProfile'
 import MapsPage from './pages/MapsPage'
 import Navigation from './components/Navigation/Navigation'
 import CreateProfilePage from './pages/CreateProfilePage'
@@ -34,7 +35,19 @@ function App() {
                   </>
                 ) : (
                   <>
+                    <SignIn profile={profile} setProfile={setProfile} />
+                  </>
+                )}
+              </Route>
+              <Route path="/user-profile">
+                {user.id ? (
+                  <>
                     <UserHeader />
+                    <UserProfile />
+                    <Navigation />
+                  </>
+                ) : (
+                  <>
                     <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
@@ -48,7 +61,6 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
                     <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
@@ -62,7 +74,6 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
                     <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
@@ -76,7 +87,6 @@ function App() {
                   </>
                 ) : (
                   <>
-                    <UserHeader />
                     <SignIn profile={profile} setProfile={setProfile} />
                   </>
                 )}
