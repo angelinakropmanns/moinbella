@@ -104,7 +104,7 @@ export default function SignIn({ profile, setProfile }) {
 const SignInPageStyled = styled.section`
   grid-row: 1/4;
   overflow: scroll;
-  margin: 12px 4px 12px 4px;
+  margin: 12px 4px;
   height: 100%;
 `
 const LogoStyled = styled.img`

@@ -119,7 +119,7 @@ export default function SignUp({ setProfile }) {
           <option value="Weiblich">Weiblich</option>
           <option value="Männlich">Männlich</option>
         </SelectStyled>
-        {errors.breed && errors.breed.type === 'required' && (
+        {errors.gender && errors.gender.type === 'required' && (
           <p>Bitte gib das Geschlecht deines Hundes an.</p>
         )}
         <label htmlFor="breed">Hunderasse*:</label>
@@ -180,7 +180,9 @@ export default function SignUp({ setProfile }) {
       'state_changed',
       (snapshot) => {},
       (error) => {
-        alert('An error occurred, please try again.')
+        alert(
+          'Das hat leider nicht funktioniert, versuche es bitte später nochmal.'
+        )
       },
       () => {
         storage
@@ -257,7 +259,7 @@ export default function SignUp({ setProfile }) {
 const SignUpPageStyled = styled.section`
   grid-row: 2/4;
   overflow: scroll;
-  margin: 12px 4px 12px 4px;
+  margin: 12px 4px;
   height: 100%;
 `
 

@@ -7,7 +7,6 @@ export default function ProfileIcon() {
   return (
     <LinkStyled
       activeClassName="selected"
-      exact
       to="/profiles"
       data-cy="profile_icon"
     >

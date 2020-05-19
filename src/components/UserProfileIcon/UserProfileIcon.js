@@ -7,11 +7,10 @@ export default function UserProfileIcon() {
   return (
     <LinkStyled
       activeClassName="selected"
-      exact
       to="/user-profile"
       data-cy="userprofile_icon"
     >
-      <img src={userprofile} alt="userprofile" />
+      <img src={userprofile} alt="user profil" />
       <br />
     </LinkStyled>
   )
