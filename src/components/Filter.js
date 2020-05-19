@@ -6,7 +6,7 @@ import styled from 'styled-components/macro'
 import filterData from '../filterData.json'
 
 Filter.propTypes = {
-  setSearchResult: PropTypes.func,
+  setSearchResult: PropTypes.func.isRequired,
 }
 
 export default function Filter({ setSearchResult }) {

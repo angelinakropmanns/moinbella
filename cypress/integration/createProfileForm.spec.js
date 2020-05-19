@@ -2,8 +2,7 @@ const testUserName = 'Hannah' + Math.floor(Math.random() * Math.floor(10))
 
 describe('after submit a new profile is created and form is cleared', () => {
   it('should form is cleared after submit', () => {
-    cy.visit('/create')
-
+    cy.visit('/create-profile')
     cy.get('[data-cy=create_profile]')
     cy.get('input[name="name"]').type(testUserName)
     cy.get('input[name="mail"]').type('test@test.com')
