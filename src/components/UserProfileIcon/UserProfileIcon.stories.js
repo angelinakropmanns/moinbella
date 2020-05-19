@@ -2,8 +2,8 @@ import React from 'react'
 import UserProfileIcon from './UserProfileIcon'
 
 export default {
-  title: 'CreateIcon',
-  component: CreateIcon,
+  title: 'UserProfileIcon',
+  component: UserProfileIcon,
 }
 
 export const SimpleUserProfileIcon = () => {
