@@ -2,18 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-EditButton.propTypes = {
+SaveButton.propTypes = {
   children: PropTypes.string,
+  onClick: PropTypes.func,
 }
 
-export default function EditButton({ children }) {
-  return <ButtonStyled>{children}</ButtonStyled>
+export default function SaveButton({ children, onClick }) {
+  return <ButtonStyled onClick={onClick}>{children}</ButtonStyled>
 }
 
 const ButtonStyled = styled.button`
   font-size: 14px;
-  height: 28px;
-  width: 120px;
+  height: 24px;
+  width: 80px;
   color: #414756;
   background: #ff9a8d;
   border-radius: 8px;
