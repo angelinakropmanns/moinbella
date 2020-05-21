@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useToggle } from 'react-hooks-lib'
 import { Link, useHistory } from 'react-router-dom'
-import { db, auth, storage } from '../Firebase'
 import styled from 'styled-components/macro'
 import { useForm } from 'react-hook-form'
+import useSignUp from '../components/Hooks/useSignUp'
 import swal from 'sweetalert'
-import SubmitButton from '../components/SubmitButton/SubmitButton'
+import SubmitButton from '../components/Buttons/SubmitButton/SubmitButton'
 import PropTypes from 'prop-types'
 import ImageUpload from '../components/ImageUpload'
 
@@ -14,21 +14,16 @@ SignUp.propTypes = {
 }
 
 export default function SignUp({ setProfile }) {
+  const {
+    handleImageUpload,
+    signUp,
+    userData,
+    setUserData,
+    previewImage,
+    setPreviewImage,
+  } = useSignUp()
   const { register, handleSubmit, errors, setError } = useForm()
   const history = useHistory()
-  const [userData, setUserData] = useState({
-    name: '',
-    plz: '',
-    city: '',
-    gender: '',
-    breed: '',
-    about: '',
-    search: '',
-  })
-  const [previewImage, setPreviewImage] = useState({
-    imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/moinbella-f6a5b.appspot.com/o/images%2Fdefault-profile-picture.png?alt=media&token=9424300e-79f8-440c-95b7-0f3b315d8962',
-  })
   const { on, toggle } = useToggle(false)
   return (
     <SignUpPageStyled>
@@ -51,7 +46,7 @@ export default function SignUp({ setProfile }) {
           placeholder="Gib deinen Vornamen an"
         />
         {errors.name && errors.name.type === 'required' && (
-          <p>Bitte gib deinen Namen an.</p>
+          <Error>Bitte gib deinen Namen an.</Error>
         )}
         <label htmlFor="email">E-Mail*:</label>
         <InputStyled
@@ -61,10 +56,10 @@ export default function SignUp({ setProfile }) {
           placeholder="Trage deine Mail-Adresse ein"
         />
         {errors.email && errors.email.type === 'required' && (
-          <p>Bitte gib eine gültige Mail-Adresse an.</p>
+          <Error>Bitte gib eine gültige Mail-Adresse an.</Error>
         )}
         {errors.email && errors.email.type === 'inUse' && (
-          <p>{errors.email.message}</p>
+          <Error>{errors.email.message}</Error>
         )}
         <label htmlFor="password">Passwort*:</label>
         <InputStyled
@@ -74,7 +69,7 @@ export default function SignUp({ setProfile }) {
           placeholder="Gib ein Passwort mit mindestens 8 Zeichen ein"
         />
         {errors.password && (
-          <p>Das Passwort muss mindestens 8 Zeichen beinhalten.</p>
+          <Error>Das Passwort muss mindestens 8 Zeichen beinhalten.</Error>
         )}
         <label htmlFor="plz">Postleitzahl*:</label>
         <InputStyled
@@ -86,10 +81,10 @@ export default function SignUp({ setProfile }) {
           placeholder="z.B. 20535"
         />
         {errors.plz && errors.plz.type === 'required' && (
-          <p>
+          <Error>
             Bitte gib deine Postleitzahl an, damit andere wissen, ob du in ihrer
             Umgebung wohnst.
-          </p>
+          </Error>
         )}
         <label htmlFor="city">Ort*:</label>
         <InputStyled
@@ -101,10 +96,10 @@ export default function SignUp({ setProfile }) {
           placeholder="z.B. Hamburg"
         />
         {errors.city && errors.city.type === 'required' && (
-          <p>
+          <Error>
             Bitte gib deinen Wohnort an, damit andere wissen, ob du in ihrer
             Umgebung wohnst.
-          </p>
+          </Error>
         )}
         <label htmlFor="gender">Geschlecht deines Hundes*:</label>
         <SelectStyled
@@ -120,7 +115,7 @@ export default function SignUp({ setProfile }) {
           <option value="Männlich">Männlich</option>
         </SelectStyled>
         {errors.gender && errors.gender.type === 'required' && (
-          <p>Bitte gib das Geschlecht deines Hundes an.</p>
+          <Error>Bitte gib das Geschlecht deines Hundes an.</Error>
         )}
         <label htmlFor="breed">Hunderasse*:</label>
         <InputStyled
@@ -132,7 +127,7 @@ export default function SignUp({ setProfile }) {
           placeholder="z.B. Bulldogge"
         />
         {errors.breed && errors.breed.type === 'required' && (
-          <p>Bitte gib die Rasse deines Hundes an.</p>
+          <Error>Bitte gib die Rasse deines Hundes an.</Error>
         )}
         {on || (
           <FormTextStyled onClick={toggle}>
@@ -173,29 +168,6 @@ export default function SignUp({ setProfile }) {
     setUserData({ ...userData, [event.target.name]: event.target.value })
   }
 
-  function handleImageUpload(event) {
-    const image = event.target.files[0]
-    const uploadTask = storage.ref(`images/${image.name}`).put(image)
-    uploadTask.on(
-      'state_changed',
-      (snapshot) => {},
-      (error) => {
-        alert(
-          'Das hat leider nicht funktioniert, versuche es bitte später nochmal.'
-        )
-      },
-      () => {
-        storage
-          .ref('images')
-          .child(image.name)
-          .getDownloadURL()
-          .then((url) => {
-            setPreviewImage({ imageUrl: url })
-          })
-      }
-    )
-  }
-
   function onSubmit(data) {
     setProfile(data)
     signUp(data)
@@ -207,7 +179,7 @@ export default function SignUp({ setProfile }) {
             'Die eingegebene Mail-Adresse wird bereits genutzt.'
           )
         }
-        setTimeout(history.pushState('/'), 3000)
+        setTimeout(history.pushState('/'), 2000)
       })
       .catch((error) => console.log(error))
     setPreviewImage({
@@ -225,33 +197,6 @@ export default function SignUp({ setProfile }) {
       title: 'Registrierung erfolgreich',
       text: 'Klicke auf "Zu den Profilen" um neue Hundekontakte zu finden!',
       icon: 'success',
-    })
-  }
-
-  async function signUp({ email, password }) {
-    console.log('signUp')
-    let res
-    try {
-      res = await auth.createUserWithEmailAndPassword(email, password)
-    } catch (error) {
-      console.log(error)
-    }
-    await addUser(res.user)
-    return res
-  }
-
-  function addUser(user) {
-    return db.collection('users').doc(user.uid).set({
-      image: previewImage.imageUrl,
-      id: user.uid,
-      name: userData.name,
-      email: user.email,
-      plz: userData.plz,
-      city: userData.city,
-      gender: userData.gender,
-      breed: userData.breed,
-      about: userData.about,
-      search: userData.search,
     })
   }
 }
@@ -278,8 +223,14 @@ const FormStyled = styled.form`
     margin-left: 4px;
   }
   textarea:focus,
-  input:focus {
+  input:focus,
+  select:focus {
     outline: none;
+    border: 1px solid #414756;
+    }
+  button:focus {
+    outline: 0;
+  }
   }
 `
 
@@ -316,8 +267,7 @@ const LongInputStyled = styled.textarea`
   width: 98%;
   border: 0;
   border-radius: 2px;
-  padding-top: 12px;
-  padding-left: 4px;
+  padding: 12px 0 0 4px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 100;
@@ -348,4 +298,9 @@ const LinkStyled = styled(Link)`
   display: flex;
   margin-top: 12px;
   color: #414756;
+`
+const Error = styled.p`
+  margin: 0 0 20px 4px;
+  color: red;
+  font-size: 14px;
 `

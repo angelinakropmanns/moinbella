@@ -6,6 +6,6 @@ export default {
   component: Navigation,
 }
 
-export const NavigationSimple = () => {
+export const SimpleNavigation = () => {
   return <Navigation />
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import maps from '../../img/maps-icon.png'
+import maps from '../../icons/maps-icon.png'
 
 export default function MapsIcon() {
   return (

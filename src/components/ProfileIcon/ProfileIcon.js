@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import profiles from '../../img/profiles-icon.png'
+import profiles from '../../icons/profiles-icon.png'
 
 export default function ProfileIcon() {
   return (

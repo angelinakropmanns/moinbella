@@ -5,7 +5,7 @@ import logo from '../img/logo.png'
 export default function Header() {
   return (
     <HeaderStyled>
-      <img src={logo} alt="Moin Bella!" />
+      <img src={logo} alt="moin bella" />
     </HeaderStyled>
   )
 }

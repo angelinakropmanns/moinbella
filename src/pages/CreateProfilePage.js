@@ -5,7 +5,7 @@ import { storage } from '../Firebase'
 import swal from 'sweetalert'
 import styled from 'styled-components/macro'
 import ImageUpload from '../components/ImageUpload'
-import SubmitButton from '../components/SubmitButton/SubmitButton'
+import SubmitButton from '../components/Buttons/SubmitButton/SubmitButton'
 
 export default function CreateProfilePage() {
   const [previewImage, setPreviewImage] = useState({

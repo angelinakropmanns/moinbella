@@ -20,7 +20,8 @@
     "react-leaflet-search": "^1.0.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,7 +55,6 @@
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
     "@testing-library/user-event": "^7.2.1",
-    "cypress": "^4.5.0",
-    "styled-components": "^5.1.0"
+    "cypress": "^4.5.0"
   }
 }

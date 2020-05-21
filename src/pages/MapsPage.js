@@ -5,7 +5,7 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
 import ReactLeafletSearch from 'react-leaflet-search'
 import styled from 'styled-components/macro'
-import AddButton from '../components/AddButton/AddButton'
+import AddButton from '../components/Buttons/AddButton/AddButton'
 
 const dog = new Icon({
   iconUrl: '/maps-marker.png',

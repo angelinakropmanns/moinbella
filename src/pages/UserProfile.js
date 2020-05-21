@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { db } from '../Firebase'
 import { useToggle } from 'react-hooks-lib'
-import EditButton from '../components/EditButton/EditButton'
-import SaveButton from '../components/SaveButton/SaveButton'
-import CloseButton from '../components/CloseButton/CloseButton'
+import EditButton from '../components/Buttons/EditButton/EditButton'
+import SaveButton from '../components/Buttons/SaveButton/SaveButton'
+import CloseButton from '../components/Buttons/CloseButton/CloseButton'
 import styled from 'styled-components/macro'
 import swal from 'sweetalert'
 
@@ -37,7 +37,7 @@ export default function UserProfile() {
       {singleUser && (
         <>
           <ProfileTitleStyled>Moin {singleUser.name}!</ProfileTitleStyled>
-          <ImageStyled src={singleUser.image} />
+          <ImageStyled src={singleUser.image} alt="" />
           {on || (
             <EditButtonStyled onClick={toggle}>
               <EditButton>Profil Bearbeiten</EditButton>
@@ -208,6 +208,11 @@ const ProfileWrapper = styled.section`
   flex-direction: column;
   align-items: flex-start;
   margin: 0 12px 24px 12px;
+  textarea:focus,
+  input:focus {
+    outline: none;
+    border: 1px solid #414756;
+  }
 `
 
 const TitleStyled = styled.p`

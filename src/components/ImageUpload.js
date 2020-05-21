@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import defaultprofilepicture from '../img/default-profile-picture.png'
-import UploadButton from '../components/UploadButton/UploadButton'
+import UploadButton from './Buttons/UploadButton/UploadButton'
 
 ImageUpload.propTypes = {
   updateImage: PropTypes.func,

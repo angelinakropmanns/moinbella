@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { db } from '../Firebase'
 import swal from 'sweetalert'
 import styled from 'styled-components/macro'
-import SubmitButton from '../components/SubmitButton/SubmitButton'
+import SubmitButton from '../components/Buttons/SubmitButton/SubmitButton'
 
 export default function CreatePlacePage() {
   const [place, setPlace] = useState({
