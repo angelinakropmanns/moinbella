@@ -178,10 +178,11 @@ export default function UserProfile() {
       .update({ [key]: value })
       .then(() => {})
       .catch((err) =>
-        alert(
-          'Das hat leider nicht funktioniert. Versuche es bitte später erneut.',
-          err
-        )
+        swal({
+          title: 'Das hat leider nicht funktioniert.',
+          text: 'Versuche es bitte später erneut.',
+          icon: 'error',
+        })
       )
     swal({
       title: 'Deine Änderung wurde gespeichert!',
