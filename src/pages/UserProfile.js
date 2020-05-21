@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { db } from '../Firebase'
+import { useToggle } from 'react-hooks-lib'
+import EditButton from '../components/EditButton/EditButton'
+import SaveButton from '../components/SaveButton/SaveButton'
+import CloseButton from '../components/CloseButton/CloseButton'
 import styled from 'styled-components/macro'
+import swal from 'sweetalert'
 
 export default function UserProfile() {
   const [user, setUser] = useState('')
+  const [breed, setBreed] = useState('')
+  const [plz, setPlz] = useState('')
+  const [city, setCity] = useState('')
+  const [gender, setGender] = useState('')
+  const [about, setAbout] = useState('')
+  const [search, setSearch] = useState('')
 
   const activeUser = localStorage.getItem('uid')
 
@@ -17,6 +28,8 @@ export default function UserProfile() {
     })
   }, [])
 
+  const { on, toggle } = useToggle(false)
+
   let singleUser = user && user.filter((user) => user.id === activeUser)[0]
 
   return (
@@ -24,40 +37,177 @@ export default function UserProfile() {
       {singleUser && (
         <>
           <ProfileTitleStyled>Moin {singleUser.name}!</ProfileTitleStyled>
+          <ImageStyled src={singleUser.image} />
+          {on || (
+            <EditButtonStyled onClick={toggle}>
+              <EditButton>Profil Bearbeiten</EditButton>
+            </EditButtonStyled>
+          )}
+          {on && (
+            <CloseButtonStyled onClick={toggle}>
+              <CloseButton>Fertig!</CloseButton>
+            </CloseButtonStyled>
+          )}
           <ProfileWrapper>
-            <TitleStyled>Deine Mail-Adresse: </TitleStyled>
+            <TitleStyled>Deine Mail-Adresse:</TitleStyled>
             <DescriptionStyled>{singleUser.email}</DescriptionStyled>
+
+            <TitleStyled>Deine Postleitzahl:</TitleStyled>
+            {on || <DescriptionStyled>{singleUser.plz}</DescriptionStyled>}
+            {on && (
+              <>
+                <InputStyled
+                  id="plz"
+                  type="text"
+                  name="plz"
+                  value={plz}
+                  onChange={(event) => setPlz(event.target.value)}
+                />
+                <SaveButton
+                  onClick={() => changeInformation(singleUser, 'plz', plz)}
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
+
             <TitleStyled>Dein Wohnort:</TitleStyled>
-            <DescriptionStyled>
-              {singleUser.plz} {singleUser.city}
-            </DescriptionStyled>
+            {on || <DescriptionStyled>{singleUser.city}</DescriptionStyled>}
+            {on && (
+              <>
+                <InputStyled
+                  id="city"
+                  type="text"
+                  name="city"
+                  value={city}
+                  onChange={(event) => setCity(event.target.value)}
+                />
+                <SaveButton
+                  onClick={() => changeInformation(singleUser, 'city', city)}
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
+
             <TitleStyled>Das Geschlecht deines Hundes:</TitleStyled>
-            <DescriptionStyled>{singleUser.gender}</DescriptionStyled>
+            {on || <DescriptionStyled>{singleUser.gender}</DescriptionStyled>}
+            {on && (
+              <>
+                <InputStyled
+                  id="gender"
+                  type="text"
+                  name="gender"
+                  value={gender}
+                  onChange={(event) => setGender(event.target.value)}
+                />
+                <SaveButton
+                  onClick={() =>
+                    changeInformation(singleUser, 'gender', gender)
+                  }
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
             <TitleStyled>Die Rasse deines Hundes:</TitleStyled>
-            <DescriptionStyled>{singleUser.breed}</DescriptionStyled>
+            {on || <DescriptionStyled>{singleUser.breed}</DescriptionStyled>}
+            {on && (
+              <>
+                <InputStyled
+                  id="breed"
+                  type="text"
+                  name="breed"
+                  value={breed}
+                  onChange={(event) => setBreed(event.target.value)}
+                />
+                <SaveButton
+                  onClick={() => changeInformation(singleUser, 'breed', breed)}
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
             <TitleStyled>Über euch:</TitleStyled>
-            <DescriptionStyled>{singleUser.about}</DescriptionStyled>
+            {on || <DescriptionStyled>{singleUser.about}</DescriptionStyled>}
+            {on && (
+              <>
+                <LongInputStyled
+                  id="about"
+                  type="text"
+                  name="about"
+                  value={about}
+                  onChange={(event) => setAbout(event.target.value)}
+                />
+                <SaveButton
+                  onClick={() => changeInformation(singleUser, 'about', about)}
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
             <TitleStyled>Wonach ihr sucht:</TitleStyled>
-            <DescriptionStyled>{singleUser.about}</DescriptionStyled>
+            {on || <DescriptionStyled>{singleUser.search}</DescriptionStyled>}
+            {on && (
+              <>
+                <LongInputStyled
+                  id="search"
+                  type="text"
+                  name="search"
+                  value={search}
+                  onChange={(event) => setSearch(event.target.value)}
+                />
+
+                <SaveButton
+                  onClick={() =>
+                    changeInformation(singleUser, 'search', search)
+                  }
+                >
+                  Speichern
+                </SaveButton>
+              </>
+            )}
           </ProfileWrapper>
         </>
       )}
     </main>
   )
+  function changeInformation(singleUser, key, value) {
+    db.collection('users')
+      .doc(singleUser.id)
+      .update({ [key]: value })
+      .then(() => {})
+      .catch((err) =>
+        swal({
+          title: 'Das hat leider nicht funktioniert.',
+          text: 'Versuche es bitte später erneut.',
+          icon: 'error',
+        })
+      )
+    swal({
+      title: 'Deine Änderung wurde gespeichert!',
+      text:
+        'Du kannst nun die Bearbeitung durch Klick auf "Fertig!" oben beenden oder weitere Informationen bearbeiten!',
+      icon: 'success',
+    })
+  }
 }
 
 const ProfileTitleStyled = styled.p`
   font-size: 24px;
 `
 
+const ImageStyled = styled.img`
+  height: 160px;
+  width: auto;
+  margin-bottom: 12px;
+`
+
 const ProfileWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 8px 0 12px;
-  p {
-    line-height: 0.5;
-  }
+  margin: 0 12px 24px 12px;
 `
 
 const TitleStyled = styled.p`
@@ -67,5 +217,49 @@ const TitleStyled = styled.p`
 `
 
 const DescriptionStyled = styled.p`
-  margin-top: 4px;
+  margin: 0;
+  text-align: left;
+`
+
+const EditButtonStyled = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 12px;
+`
+
+const CloseButtonStyled = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 12px;
+`
+
+const InputStyled = styled.input`
+  height: 32px;
+  width: 98%;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 4px 0 12px 0;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #d8f7fc;
+  color: #353b40;
+`
+
+const LongInputStyled = styled.textarea`
+  height: 80px;
+  width: 98%;
+  border: 0;
+  border-radius: 2px;
+  padding-top: 12px;
+  padding-left: 4px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 4px 0 12px 0;
+  background-color: #d8f7fc;
+  color: #353b40;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `
