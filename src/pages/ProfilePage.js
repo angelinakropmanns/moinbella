@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { db } from '../Firebase'
+import styled from 'styled-components/macro'
 import Profile from '../components/Profile'
 import Filter from '../components/Filter'
 
@@ -27,7 +28,7 @@ export default function ProfilePage() {
   return (
     <main>
       <Filter setSearchResult={setSearchResult} />
-      <p>
+      <ProfileWrapper>
         {filteredData.length === 0 ? (
           <p>Es konnten leider keine passenden Profile gefunden werden.</p>
         ) : (
@@ -51,7 +52,11 @@ export default function ProfilePage() {
               ))}
           </>
         )}
-      </p>
+      </ProfileWrapper>
     </main>
   )
 }
+
+const ProfileWrapper = styled.section`
+  margin-top: 12px;
+`

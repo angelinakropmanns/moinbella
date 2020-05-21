@@ -99,7 +99,7 @@ const SignInPageStyled = styled.section`
   height: 100%;
 `
 const LogoStyled = styled.img`
-  width: 72%;
+  width: 272px;
   height: auto;
   margin-top: 20px;
 `

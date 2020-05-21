@@ -9,7 +9,6 @@ import ProfilePage from './pages/ProfilePage'
 import UserProfile from './pages/UserProfile'
 import MapsPage from './pages/MapsPage'
 import Navigation from './components/Navigation/Navigation'
-import CreateProfilePage from './pages/CreateProfilePage'
 import CreatePlacePage from './pages/CreatePlacePage'
 
 function App() {
@@ -55,19 +54,6 @@ function App() {
                 <>
                   <UserHeader />
                   <MapsPage />
-                  <Navigation />
-                </>
-              ) : (
-                <>
-                  <SignIn profile={profile} setProfile={setProfile} />
-                </>
-              )}
-            </Route>
-            <Route path="/create-profile">
-              {user.id ? (
-                <>
-                  <UserHeader />
-                  <CreateProfilePage />
                   <Navigation />
                 </>
               ) : (
