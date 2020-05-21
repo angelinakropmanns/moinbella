@@ -211,7 +211,7 @@ const ProfileWrapper = styled.section`
   textarea:focus,
   input:focus {
     outline: none;
-    border: 1px solid #414756;
+    border: 1px solid var(--secondary);
   }
 `
 
@@ -249,8 +249,7 @@ const InputStyled = styled.input`
   font-weight: 100;
   margin: 4px 0 12px 0;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 
 const LongInputStyled = styled.textarea`
@@ -264,7 +263,6 @@ const LongInputStyled = styled.textarea`
   font-size: 14px;
   font-weight: 100;
   margin: 4px 0 12px 0;
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `

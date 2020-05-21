@@ -23,7 +23,7 @@ export default function Navigation() {
 const NavigationStyled = styled.footer`
   display: flex;
   justify-content: space-around;
-  background-color: #aed6dc;
+  background: var(--background);
   box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.2);
   margin: 0;
 `

@@ -15,6 +15,8 @@ export default createGlobalStyle`
 
 header {
    grid-row: 1/2;
+   height: 48px;
+   z-index: 1;
 }
 
 main {
@@ -25,8 +27,8 @@ main {
 }
  
 body {
-       color: #414756;
-       background-color: #AED6DC;
+       color: var(--secondary);
+       background: var(--background);
        margin: 0;
        height: 100vh;
        text-align: center;
@@ -39,5 +41,13 @@ footer {
    position: bottom;
    height: 48px;
    z-index: 1;
+}
+
+:root {
+   --background: #aed6dc;
+   --primary: #ff9a8d;
+   --secondary: #414756;
+   --tertiary: #c1e1e6;
+   --quaternary: #d8f7fc;
 }
 `

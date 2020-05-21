@@ -109,7 +109,7 @@ const FormStyled = styled.form`
   margin: 80px 20px 20px 20px;
   text-align: left;
   label {
-    color: #414756;
+    color: var(--secondary);
   }
   textarea:focus,
   input:focus {
@@ -129,10 +129,10 @@ const InputStyled = styled.input`
   font-size: 14px;
   font-weight: 100;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
-  color: #414756;
-  background: #aed6dc;
+  color: var(--secondary);
+  background: var(--background);
   border: none;
-  border-bottom: 1px solid #414756;
+  border-bottom: 1px solid var(--secondary);
   margin-bottom: 28px;
 `
 
@@ -147,7 +147,7 @@ const TextStyled = styled.p`
 `
 
 const LinkStyled = styled(Link)`
-  color: #414756;
+  color: var(--secondary);
 `
 
 const Error = styled.p`

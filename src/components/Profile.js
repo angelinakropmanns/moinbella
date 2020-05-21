@@ -70,7 +70,7 @@ const ProfileWrapper = styled.section`
 const ProfileStyled = styled.section`
   display: grid;
   grid-template-columns: 30% 70%;
-  background: #c1e1e6;
+  background: var(--tertiary);
   width: 98%;
   text-align: left;
   line-height: 1.5;

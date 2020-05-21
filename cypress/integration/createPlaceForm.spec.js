@@ -1,7 +1,7 @@
 describe('after submit a new place is added to the map and the form is cleared', () => {
   it('the form is cleared after submit', () => {
     cy.visit('/create-place')
-    cy.get('[data-cy=mail_input]').type('test@test.de')
+    cy.get('[data-cy=mail_input]').type('angelina.kropmanns@gmail.com')
     cy.get('[data-cy=password_input]').type('testtest')
     cy.get('[data-cy=signin_form]').submit()
     cy.get('[data-cy=create_place]')
@@ -26,5 +26,6 @@ describe('after submit a new place is added to the map and the form is cleared',
     cy.visit('/maps')
 
     cy.contains('Hundeplatz').should('exist')
+    cy.get('[data-cy=logout]').click()
   })
 })

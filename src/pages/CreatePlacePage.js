@@ -152,8 +152,7 @@ const InputStyled = styled.input`
   font-weight: 100;
   margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 const CoordinatesInputLatStyled = styled.input`
   height: 36px;
@@ -166,8 +165,7 @@ const CoordinatesInputLatStyled = styled.input`
   font-weight: 100;
   margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 const CoordinatesInputLongStyled = styled.input`
   height: 36px;
@@ -180,8 +178,7 @@ const CoordinatesInputLongStyled = styled.input`
   font-weight: 100;
   margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 
 const CoordinatesContainerLatStyled = styled.div`

@@ -219,14 +219,14 @@ const FormStyled = styled.form`
   margin: 8px 0 20px 0;
   text-align: left;
   label {
-    color: #414756;
+    color: var(--secondary);
     margin-left: 4px;
   }
   textarea:focus,
   input:focus,
   select:focus {
     outline: none;
-    border: 1px solid #414756;
+    border: 1px solid var(--secondary);
     }
   button:focus {
     outline: 0;
@@ -245,8 +245,7 @@ const InputStyled = styled.input`
   font-weight: 100;
   margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 const SelectStyled = styled.select`
   height: 36px;
@@ -259,8 +258,7 @@ const SelectStyled = styled.select`
   font-weight: 100;
   margin: 12px auto 12px 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
 `
 const LongInputStyled = styled.textarea`
   height: 80px;
@@ -272,8 +270,7 @@ const LongInputStyled = styled.textarea`
   font-size: 14px;
   font-weight: 100;
   margin: 12px auto 12px 4px;
-  background-color: #d8f7fc;
-  color: #353b40;
+  background: var(--quaternary);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `
 const FormTextStyled = styled.p`
@@ -297,7 +294,7 @@ const TextStyled = styled.p`
 const LinkStyled = styled(Link)`
   display: flex;
   margin-top: 12px;
-  color: #414756;
+  color: var(--secondary);
 `
 const Error = styled.p`
   margin: 0 0 20px 4px;

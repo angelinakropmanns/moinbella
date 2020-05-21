@@ -14,7 +14,9 @@ export default function UserHeader() {
               <HeaderStyled>
                 <img src={logo} alt="moin bella" />
                 <br />
-                <p onClick={logout}>Logout</p>
+                <p onClick={logout} data-cy="logout">
+                  Logout
+                </p>
               </HeaderStyled>
             </>
           ) : (

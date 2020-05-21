@@ -14,7 +14,7 @@ const ButtonStyled = styled.button`
   font-size: 14px;
   height: 28px;
   width: 120px;
-  color: #414756;
+  color: var(--secondary);
   background: #64b7c4;
   border-radius: 8px;
   border: 28px;
