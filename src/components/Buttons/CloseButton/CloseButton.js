@@ -11,12 +11,15 @@ export default function CloseButton({ children }) {
 }
 
 const ButtonStyled = styled.button`
-  font-size: 14px;
-  height: 28px;
-  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 56px;
+  width: 56px;
   color: var(--secondary);
-  background: #64b7c4;
-  border-radius: 8px;
+  background: var(--primary);
+  border-radius: 50%;
   border: 28px;
   box-shadow: 0px 0px 4px 0.5px rgba(0, 0, 0, 0.5);
 `

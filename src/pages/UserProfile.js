@@ -186,7 +186,7 @@ export default function UserProfile({ user, setUser }) {
     swal({
       title: 'Deine Änderung wurde gespeichert!',
       text:
-        'Du kannst nun die Bearbeitung durch Klick auf "Fertig!" oben beenden oder weitere Informationen bearbeiten!',
+        'Klicke auf "Fertig!" um die Bearbeitung zu beenden oder bearbeite weitere Infos!',
       icon: 'success',
     })
   }
@@ -233,8 +233,11 @@ const EditButtonStyled = styled.section`
 
 const CloseButtonStyled = styled.section`
   display: flex;
-  justify-content: flex-start;
-  margin-left: 12px;
+  justify-content: flex-end;
+  margin-right: 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40px;
 `
 
 const InputStyled = styled.input`
