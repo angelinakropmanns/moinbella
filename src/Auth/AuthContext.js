@@ -6,20 +6,20 @@ import { useHistory } from 'react-router-dom'
 const AuthContext = React.createContext()
 
 function AuthProvider({ setProfile, children }) {
-  const [user, setUser] = useState({})
+  const [users, setUsers] = useState({})
   const history = useHistory()
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        setUser({
+        setUsers({
           id: user.uid,
           email: user.email,
         })
         window.localStorage.setItem('uid', user.uid)
         getUserInformation()
       } else {
-        setUser({})
+        setUsers({})
         setProfile({ email: '', password: '', id: '' })
         window.localStorage.removeItem('uid')
       }
@@ -46,14 +46,14 @@ function AuthProvider({ setProfile, children }) {
     try {
       event.preventDefault()
       auth.signOut()
-      setUser({})
+      setUsers({})
       setProfile({ email: '', password: '', id: '' })
       history.push('/')
     } catch (err) {}
   }
 
   return (
-    <AuthContext.Provider value={{ user, logout }}>
+    <AuthContext.Provider value={{ users, logout }}>
       {children}
     </AuthContext.Provider>
   )

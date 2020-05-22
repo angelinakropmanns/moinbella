@@ -7,8 +7,7 @@ import CloseButton from '../components/Buttons/CloseButton/CloseButton'
 import styled from 'styled-components/macro'
 import swal from 'sweetalert'
 
-export default function UserProfile() {
-  const [user, setUser] = useState('')
+export default function UserProfile({ user, setUser }) {
   const [breed, setBreed] = useState('')
   const [plz, setPlz] = useState('')
   const [city, setCity] = useState('')
@@ -26,7 +25,7 @@ export default function UserProfile() {
       }))
       setUser(users)
     })
-  }, [])
+  }, [setUser])
 
   const { on, toggle } = useToggle(false)
 

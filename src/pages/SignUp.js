@@ -3,7 +3,7 @@ import { useToggle } from 'react-hooks-lib'
 import { Link, useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { useForm } from 'react-hook-form'
-import useSignUp from '../components/Hooks/useSignUp'
+import useSignUp from '../components/hooks/useSignUp'
 import swal from 'sweetalert'
 import SubmitButton from '../components/Buttons/SubmitButton/SubmitButton'
 import PropTypes from 'prop-types'
@@ -226,7 +226,7 @@ const FormStyled = styled.form`
   input:focus,
   select:focus {
     outline: none;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     }
   button:focus {
     outline: 0;

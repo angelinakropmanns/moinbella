@@ -17,17 +17,18 @@ function App() {
     password: '',
     id: '',
   })
+  const [user, setUser] = useState([])
   return (
     <AuthProvider setProfile={setProfile}>
       <AuthConsumer>
-        {({ user }) => (
+        {({ users }) => (
           <Switch>
             <Redirect exact from="/" to="profiles" />
             <Route path="/profiles">
-              {user.id ? (
+              {users.id ? (
                 <>
                   <UserHeader />
-                  <ProfilePage />
+                  <ProfilePage user={user} setUser={setUser} />
                   <Navigation />
                 </>
               ) : (
@@ -37,10 +38,10 @@ function App() {
               )}
             </Route>
             <Route path="/user-profile">
-              {user.id ? (
+              {users.id ? (
                 <>
                   <UserHeader />
-                  <UserProfile />
+                  <UserProfile user={user} setUser={setUser} />
                   <Navigation />
                 </>
               ) : (
@@ -50,7 +51,7 @@ function App() {
               )}
             </Route>
             <Route path="/maps">
-              {user.id ? (
+              {users.id ? (
                 <>
                   <UserHeader />
                   <MapsPage />
@@ -63,7 +64,7 @@ function App() {
               )}
             </Route>
             <Route path="/create-place">
-              {user.id ? (
+              {users.id ? (
                 <>
                   <UserHeader />
                   <CreatePlacePage />

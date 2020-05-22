@@ -7,9 +7,9 @@ import styled from 'styled-components/macro'
 export default function UserHeader() {
   return (
     <AuthConsumer>
-      {({ user, logout }) => (
+      {({ users, logout }) => (
         <section>
-          {user.id ? (
+          {users.id ? (
             <>
               <HeaderStyled>
                 <img src={logo} alt="moin bella" />

@@ -4,8 +4,7 @@ import styled from 'styled-components/macro'
 import Profile from '../components/Profile'
 import Filter from '../components/Filter'
 
-export default function ProfilePage() {
-  const [user, setUser] = useState([])
+export default function ProfilePage({ user, setUser }) {
   const [searchResult, setSearchResult] = useState('')
 
   useEffect(() => {
@@ -19,11 +18,10 @@ export default function ProfilePage() {
     return () => {
       profiles()
     }
-  }, [])
+  }, [setUser])
 
-  let filteredData = user.filter((profile) =>
-    profile.plz.includes(searchResult)
-  )
+  let filteredData =
+    user && user.filter((profile) => profile.plz.includes(searchResult))
 
   return (
     <main>

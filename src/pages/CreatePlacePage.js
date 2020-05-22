@@ -138,6 +138,10 @@ const FormStyled = styled.form`
   textarea:focus,
   input:focus {
     outline: none;
+    border: 1px solid var(--primary);
+  }
+  button:focus {
+    outline: 0;
   }
 `
 
