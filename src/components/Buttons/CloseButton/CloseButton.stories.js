@@ -9,5 +9,5 @@ export default {
 }
 
 export const SimpleCloseButton = () => {
-  return <CloseButton>{text('Children', 'Submit')}</CloseButton>
+  return <CloseButton>{text('Children', 'Close')}</CloseButton>
 }

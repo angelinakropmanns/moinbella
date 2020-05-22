@@ -106,7 +106,7 @@ const LogoStyled = styled.img`
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 80px 20px 20px 20px;
+  margin: 40px 20px 20px 20px;
   text-align: left;
   label {
     color: var(--secondary);

@@ -9,5 +9,5 @@ export default {
 }
 
 export const SimpleSaveButton = () => {
-  return <SaveButton>{text('Children', 'Submit')}</SaveButton>
+  return <SaveButton>{text('Children', 'Save')}</SaveButton>
 }

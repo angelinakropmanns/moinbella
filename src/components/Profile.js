@@ -31,7 +31,7 @@ export default function Profile({
       <ProfileStyled onClick={toggle}>
         <img src={image} alt="" />
         <ProfileMainStyled>
-          <ProfileTitleStyled data-cy="profile_name">
+          <ProfileTitleStyled className="profile-title" data-cy="profile_name">
             {name}
             <br />
           </ProfileTitleStyled>
@@ -47,14 +47,26 @@ export default function Profile({
         {on || <ArrowStyled>&darr;</ArrowStyled>}
         {on && (
           <>
-            <p className="about">
-              Über uns: <br />
-              {about}
-            </p>
-            <p className="search">
-              Wonach wir suchen: <br />
-              {search}
-            </p>
+            {about.length === 0 ? (
+              <p className="about">
+                Über uns: <br />-
+              </p>
+            ) : (
+              <p className="about">
+                Über uns: <br />
+                {about}
+              </p>
+            )}
+            {search.length === 0 ? (
+              <p className="search">
+                Wonach wir suchen: <br />-
+              </p>
+            ) : (
+              <p className="search">
+                Wonach wir suchen: <br />
+                {search}
+              </p>
+            )}
             <ArrowStyled>&uarr;</ArrowStyled>
           </>
         )}
@@ -84,6 +96,11 @@ const ProfileStyled = styled.section`
   img {
     max-width: 100%;
     max-height: auto;
+  }
+  .profile-title {
+    :first-letter {
+      text-transform: uppercase;
+    }
   }
   .about {
     grid-column: 1/3;

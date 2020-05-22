@@ -3,6 +3,8 @@ import { db } from '../Firebase'
 import styled from 'styled-components/macro'
 import Profile from '../components/Profile'
 import Filter from '../components/Filter'
+import ButtonToTop from '../components/Buttons/ButtonToTop/ButtonToTop'
+import RandomDogText from '../components/RandomDogText.js'
 
 export default function ProfilePage({ user, setUser }) {
   const [searchResult, setSearchResult] = useState('')
@@ -25,6 +27,8 @@ export default function ProfilePage({ user, setUser }) {
 
   return (
     <main>
+      <div id="top" />
+      <RandomDogText />
       <Filter setSearchResult={setSearchResult} />
       <ProfileWrapper>
         {filteredData.length === 0 ? (
@@ -33,7 +37,11 @@ export default function ProfilePage({ user, setUser }) {
           <>
             {filteredData
               .slice()
-              .sort((profileA, profileB) => profileA.name > profileB.name)
+              .sort((profileA, profileB) =>
+                profileA.name
+                  .toLowerCase()
+                  .localeCompare(profileB.name.toLowerCase())
+              )
               .map((profile) => (
                 <Profile
                   key={profile.id}
@@ -50,6 +58,11 @@ export default function ProfilePage({ user, setUser }) {
               ))}
           </>
         )}
+        <a href="#top">
+          <ButtonToTopStyled>
+            <ButtonToTop />
+          </ButtonToTopStyled>
+        </a>
       </ProfileWrapper>
     </main>
   )
@@ -57,4 +70,14 @@ export default function ProfilePage({ user, setUser }) {
 
 const ProfileWrapper = styled.section`
   margin-top: 12px;
+  margin-bottom: 40px;
+`
+
+const ButtonToTopStyled = styled.section`
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
 `

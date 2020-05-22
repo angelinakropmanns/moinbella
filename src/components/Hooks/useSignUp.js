@@ -38,13 +38,10 @@ export default function useSignUp() {
     )
   }
   async function signUp({ email, password }) {
-    console.log('signUp')
     let res
     try {
       res = await auth.createUserWithEmailAndPassword(email, password)
-    } catch (error) {
-      console.log(error)
-    }
+    } catch (error) {}
     await addUser(res.user)
     return res
   }
