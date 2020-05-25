@@ -209,9 +209,18 @@ const ProfileWrapper = styled.section`
   align-items: flex-start;
   margin: 0 12px 24px 12px;
   textarea:focus,
-  input:focus {
+  input:focus,
+  select:focus {
     outline: none;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
+  }
+  button:focus {
+    outline: 0;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--quaternary) inset !important;
   }
 `
 
