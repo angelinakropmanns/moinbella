@@ -25,7 +25,8 @@ export default function UserProfile({ user, setUser }) {
       }))
       setUser(users)
     })
-  }, [setUser])
+    // eslint-disable-next-line
+  }, [])
 
   const { on, toggle } = useToggle(false)
 

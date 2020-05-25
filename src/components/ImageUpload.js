@@ -53,9 +53,8 @@ const ImageStyled = styled.div`
 const UploadStyled = styled.section`
   display: flex;
   justify-content: center;
-  margin: 4px 0 16px 4px;
+  margin: 4px 0 24px 0;
   .file-upload {
-    opacity: 0;
-    position: fixed;
+    display: none;
   }
 `

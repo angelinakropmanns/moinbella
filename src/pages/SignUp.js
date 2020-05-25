@@ -179,7 +179,7 @@ export default function SignUp({ setProfile }) {
             'Die eingegebene Mail-Adresse wird bereits genutzt.'
           )
         }
-        setTimeout(history.pushState('/'), 2000)
+        setTimeout(history.push('/'), 2000)
       })
       .catch((error) => console.log(error))
     setPreviewImage({
@@ -195,7 +195,6 @@ export default function SignUp({ setProfile }) {
     })
     swal({
       title: 'Registrierung erfolgreich',
-      text: 'Klicke auf "Zu den Profilen" um neue Hundekontakte zu finden!',
       icon: 'success',
     })
   }
@@ -227,10 +226,14 @@ const FormStyled = styled.form`
   select:focus {
     outline: none;
     border: 1px solid var(--primary);
-    }
+  }
   button:focus {
     outline: 0;
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--quaternary) inset !important;
   }
 `
 

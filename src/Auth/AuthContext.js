@@ -11,6 +11,7 @@ function AuthProvider({ setProfile, children }) {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
+      console.log('authprovider', user)
       if (user) {
         setUsers({
           id: user.uid,
@@ -19,6 +20,7 @@ function AuthProvider({ setProfile, children }) {
         window.localStorage.setItem('uid', user.uid)
         getUserInformation()
       } else {
+        console.log('authprovider', user)
         setUsers({})
         setProfile({ email: '', password: '', id: '' })
         window.localStorage.removeItem('uid')
@@ -28,7 +30,7 @@ function AuthProvider({ setProfile, children }) {
   }, [])
 
   function getUserInformation() {
-    db.collection('registrations')
+    db.collection('users')
       .doc(auth.currentUser.uid)
       .get()
       .then((doc) => {
@@ -45,9 +47,10 @@ function AuthProvider({ setProfile, children }) {
   async function logout(event) {
     try {
       event.preventDefault()
-      auth.signOut()
       setUsers({})
       setProfile({ email: '', password: '', id: '' })
+      auth.signOut()
+      console.log('signed out')
       history.push('/')
     } catch (err) {}
   }

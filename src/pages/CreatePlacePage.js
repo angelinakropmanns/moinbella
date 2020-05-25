@@ -143,6 +143,11 @@ const FormStyled = styled.form`
   button:focus {
     outline: 0;
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--quaternary) inset !important;
+  }
 `
 
 const InputStyled = styled.input`

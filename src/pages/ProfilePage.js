@@ -20,7 +20,8 @@ export default function ProfilePage({ user, setUser }) {
     return () => {
       profiles()
     }
-  }, [setUser])
+    // eslint-disable-next-line
+  }, [])
 
   let filteredData =
     user && user.filter((profile) => profile.plz.includes(searchResult))

@@ -106,7 +106,7 @@ const LogoStyled = styled.img`
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 40px 20px 20px 20px;
+  margin: 80px 20px 20px 20px;
   text-align: left;
   label {
     color: var(--secondary);
@@ -117,6 +117,11 @@ const FormStyled = styled.form`
   }
   button:focus {
     outline: 0;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
   }
 `
 
