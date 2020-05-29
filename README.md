@@ -9,9 +9,9 @@ This app was developed as my capstone project during the last four weeks of the 
 
 This app was developed and optimized for mobile usage (iPhone 6/7/8), so please switch your browser to responsive mode.
 
-You can take a look at the app [here](https://moinbella-f6a5b.web.app/)
-To use the app, you need to sign in. If you don't want to sign up, you can use the following account:
-Mail: moinbella2020@gmail.com
+You can take a look at the app [here](https://moinbella-f6a5b.web.app/)<br>
+To use the app, you need to sign in. If you don't want to sign up, you can use the following account:<br>
+Mail: moinbella2020@gmail.com<br>
 Password: testtest
 
 ## Tech Stack & Dependencies
