@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { db } from '../Firebase'
 import swal from 'sweetalert'
 import styled from 'styled-components/macro'
@@ -14,6 +15,7 @@ export default function CreatePlacePage() {
     size: '',
     public_transport: '',
   })
+  const history = useHistory()
 
   return (
     <main>
@@ -110,9 +112,9 @@ export default function CreatePlacePage() {
       size: '',
       public_transport: '',
     })
+    setTimeout(history.push('/maps'), 2000)
     swal({
       title: 'Der Hundeplatz wurde erfolgreich angelegt!',
-      text: 'Gehe zurück zur Map, um alle Hundeplätze zu sehen!',
       icon: 'success',
     })
   }
